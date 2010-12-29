@@ -1,0 +1,68 @@
+body
+{
+    color: black;
+    background-color: gray;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.banner
+{
+    background-color: #969696;
+    width: 800px;
+    height: 190px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    padding: 0 auto;
+}
+
+.head
+{
+    width: 800px;
+    display: table;
+    margin: 0 auto;
+    margin-bottom:5px;
+    border-spacing: 2px;
+    border-collapse: separate;
+}
+
+#side 
+{
+    border: 1px solid #545454;
+    background-color: #969696;
+    display: table-cell;
+    width: 170px;
+    height: 60px;
+    margin-left: 5px;
+    border-spacing: 5px;
+    border-collapse: separate;
+}
+
+.button
+{
+    background-color: #969696;
+    margin: 8px;
+}
+
+#main 
+{
+    border: 1px solid #545454;
+    background-color: #969696;
+    width: 555px;
+    display: table-cell;
+    margin-right: 5px;
+    padding: 5px;
+    border-spacing: 5px;
+    border-collapse: separate;
+    vertical-align: top;
+}
+
+.foot
+{
+    border: 1px solid #545454;
+    background-color: #969696;
+    width: 800px;
+    height: 40px;
+    margin: 5px;
+    margin: 0 auto;
+}
