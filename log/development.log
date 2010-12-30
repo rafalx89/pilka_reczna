@@ -23882,3 +23882,952 @@ Processing HomeController#index (for 127.0.0.1 at 2010-12-29 23:59:01) [GET]
 Rendering template within layouts/home
 Rendering home/index
 Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (133.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (83.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateLeagues (20101229230707)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "leagues" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "country" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101229230707')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("leagues")[0m
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:08:58) [GET]
+  [4;36;1mLeague Load (0.5ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/leagues
+Rendering leagues/index
+Completed in 20ms (View: 15, DB: 0) | 200 OK [http://localhost/leagues/]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:09:00) [GET]
+  [4;35;1mLeague Load (0.4ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/leagues
+Rendering leagues/index
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/leagues/]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:09:01) [GET]
+  [4;36;1mLeague Load (0.4ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/leagues
+Rendering leagues/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/leagues/]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:09:01) [GET]
+  [4;35;1mLeague Load (0.5ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/leagues
+Rendering leagues/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/leagues/]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:09:01) [GET]
+  [4;36;1mLeague Load (0.4ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/leagues
+Rendering leagues/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/leagues/]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:09:02) [GET]
+  [4;35;1mLeague Load (0.3ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/leagues
+Rendering leagues/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/leagues/]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:09:02) [GET]
+  [4;36;1mLeague Load (0.3ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/leagues
+Rendering leagues/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/leagues/]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:09:03) [GET]
+  [4;35;1mLeague Load (0.4ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/leagues
+Rendering leagues/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/leagues/]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:09:03) [GET]
+  [4;36;1mLeague Load (0.3ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/leagues
+Rendering leagues/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/leagues/]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:09:03) [GET]
+  [4;35;1mLeague Load (0.3ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/leagues
+Rendering leagues/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/leagues/]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:09:04) [GET]
+  [4;36;1mLeague Load (0.4ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/leagues
+Rendering leagues/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/leagues/]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:10:09) [GET]
+  [4;35;1mLeague Load (0.3ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/leagues/]
+
+
+Processing LeaguesController#new (for 127.0.0.1 at 2010-12-30 00:11:14) [GET]
+Rendering template within layouts/home
+Rendering leagues/new
+Completed in 18ms (View: 12, DB: 0) | 200 OK [http://localhost/leagues/new]
+
+
+Processing LeaguesController#create (for 127.0.0.1 at 2010-12-30 00:11:31) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"30CToL9R61XTJDBOGUqSa7XeLK3W4XyeMS0M0ssMjn0=", "league"=>{"name"=>"Ekstraklasa", "country"=>"Polska"}}
+  [4;36;1mLeague Create (0.4ms)[0m   [0;1mINSERT INTO "leagues" ("name", "created_at", "country", "updated_at") VALUES('Ekstraklasa', '2010-12-29 23:11:31', 'Polska', '2010-12-29 23:11:31')[0m
+Redirected to http://localhost:3000/leagues/1
+Completed in 198ms (DB: 0) | 302 Found [http://localhost/leagues]
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 00:11:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mLeague Load (0.2ms)[0m   [0mSELECT * FROM "leagues" WHERE ("leagues"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering leagues/show
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/leagues/1]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:11:58) [GET]
+  [4;36;1mLeague Load (0.4ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#new (for 127.0.0.1 at 2010-12-30 00:12:09) [GET]
+Rendering template within layouts/home
+Rendering leagues/new
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/leagues/new]
+
+
+Processing LeaguesController#create (for 127.0.0.1 at 2010-12-30 00:12:17) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"30CToL9R61XTJDBOGUqSa7XeLK3W4XyeMS0M0ssMjn0=", "league"=>{"name"=>"I liga", "country"=>"Polska"}}
+  [4;35;1mLeague Create (0.6ms)[0m   [0mINSERT INTO "leagues" ("name", "created_at", "country", "updated_at") VALUES('I liga', '2010-12-29 23:12:17', 'Polska', '2010-12-29 23:12:17')[0m
+Redirected to http://localhost:3000/leagues/2
+Completed in 182ms (DB: 1) | 302 Found [http://localhost/leagues]
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 00:12:17) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mLeague Load (0.2ms)[0m   [0;1mSELECT * FROM "leagues" WHERE ("leagues"."id" = 2) [0m
+Rendering template within layouts/home
+Rendering leagues/show
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/leagues/2]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:12:25) [GET]
+  [4;35;1mLeague Load (0.7ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:24:12) [GET]
+  [4;36;1mLeague Load (0.4ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 19ms (View: 14, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:26:43) [GET]
+  [4;35;1mLeague Load (0.8ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 21ms (View: 15, DB: 1) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:27:02) [GET]
+  [4;36;1mLeague Load (0.5ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#edit (for 127.0.0.1 at 2010-12-30 00:27:16) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mLeague Load (0.2ms)[0m   [0mSELECT * FROM "leagues" WHERE ("leagues"."id" = 2) [0m
+Rendering template within layouts/home
+Rendering leagues/edit
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://localhost/leagues/2/edit]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:27:22) [GET]
+  [4;36;1mLeague Load (0.4ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#new (for 127.0.0.1 at 2010-12-30 00:27:25) [GET]
+Rendering template within layouts/home
+Rendering leagues/new
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/leagues/new]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:27:34) [GET]
+  [4;35;1mLeague Load (0.5ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-12-30 00:28:23) [GET]
+Rendering template within layouts/home
+Rendering home/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-12-30 00:28:25) [GET]
+
+ActionController::RoutingError (No route matches "/.../leagues" with {:method=>:get}):
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-12-30 00:30:14) [GET]
+Rendering template within layouts/home
+Rendering home/index
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:30:16) [GET]
+  [4;36;1mLeague Load (0.4ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 81ms (View: 76, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:30:22) [GET]
+  [4;35;1mLeague Load (0.6ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/leagues]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-12-30 00:30:23) [GET]
+Rendering template within layouts/home
+Rendering home/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:30:24) [GET]
+  [4;36;1mLeague Load (0.4ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 18ms (View: 13, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-12-30 00:30:25) [GET]
+Rendering template within layouts/home
+Rendering home/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:30:25) [GET]
+  [4;35;1mLeague Load (0.4ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-12-30 00:30:26) [GET]
+Rendering template within layouts/home
+Rendering home/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:30:26) [GET]
+  [4;36;1mLeague Load (0.5ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 65ms (View: 60, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-12-30 00:30:28) [GET]
+Rendering template within layouts/home
+Rendering home/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:30:30) [GET]
+  [4;35;1mLeague Load (0.4ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index to html (for 127.0.0.1 at 2010-12-30 00:34:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mLeague Load (0.4ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/leagues/index/1.html]
+
+
+Processing LeaguesController#index to xml (for 127.0.0.1 at 2010-12-30 00:34:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mLeague Load (0.4ms)[0m   [0mSELECT * FROM "leagues" [0m
+Completed in 159ms (View: 153, DB: 0) | 200 OK [http://localhost/leagues/index/1.xml]
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 00:37:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mLeague Load (0.2ms)[0m   [0;1mSELECT * FROM "leagues" WHERE ("leagues"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering leagues/show
+Completed in 51ms (View: 6, DB: 0) | 200 OK [http://localhost/leagues/1]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:37:38) [GET]
+  [4;35;1mLeague Load (0.5ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:39:32) [GET]
+  [4;36;1mLeague Load (0.4ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:39:34) [GET]
+  [4;35;1mLeague Load (0.4ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:39:35) [GET]
+  [4;36;1mLeague Load (0.4ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:39:36) [GET]
+  [4;35;1mLeague Load (0.7ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index to html (for 127.0.0.1 at 2010-12-30 00:39:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mLeague Load (0.6ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 17ms (View: 12, DB: 1) | 200 OK [http://localhost/leagues/index/1.html]
+
+
+Processing LeaguesController#show to html (for 127.0.0.1 at 2010-12-30 00:39:50) [GET]
+  Parameters: {"id"=>"index"}
+  [4;35;1mLeague Load (0.1ms)[0m   [0mSELECT * FROM "leagues" WHERE ("leagues"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find League with ID=index):
+  app/controllers/leagues_controller.rb:11:in `show'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (41.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 00:39:54) [GET]
+  Parameters: {"id"=>"index"}
+  [4;36;1mLeague Load (0.2ms)[0m   [0;1mSELECT * FROM "leagues" WHERE ("leagues"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find League with ID=index):
+  app/controllers/leagues_controller.rb:11:in `show'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 00:40:07) [GET]
+  Parameters: {"id"=>"index"}
+  [4;35;1mLeague Load (0.1ms)[0m   [0mSELECT * FROM "leagues" WHERE ("leagues"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find League with ID=index):
+  app/controllers/leagues_controller.rb:11:in `show'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (41.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 00:40:08) [GET]
+  Parameters: {"id"=>"index"}
+  [4;36;1mLeague Load (0.2ms)[0m   [0;1mSELECT * FROM "leagues" WHERE ("leagues"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find League with ID=index):
+  app/controllers/leagues_controller.rb:11:in `show'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 00:40:09) [GET]
+  Parameters: {"id"=>"index"}
+  [4;35;1mLeague Load (0.1ms)[0m   [0mSELECT * FROM "leagues" WHERE ("leagues"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find League with ID=index):
+  app/controllers/leagues_controller.rb:11:in `show'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 00:40:09) [GET]
+  Parameters: {"id"=>"index"}
+  [4;36;1mLeague Load (0.2ms)[0m   [0;1mSELECT * FROM "leagues" WHERE ("leagues"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find League with ID=index):
+  app/controllers/leagues_controller.rb:11:in `show'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (97.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 00:40:13) [GET]
+  Parameters: {"id"=>"index"}
+  [4;35;1mLeague Load (0.1ms)[0m   [0mSELECT * FROM "leagues" WHERE ("leagues"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find League with ID=index):
+  app/controllers/leagues_controller.rb:11:in `show'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (52.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:40:18) [GET]
+  [4;36;1mLeague Load (0.4ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index to html (for 127.0.0.1 at 2010-12-30 00:40:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mLeague Load (0.4ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 69ms (View: 64, DB: 0) | 200 OK [http://localhost/leagues/index/1.html]
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 00:40:27) [GET]
+  Parameters: {"id"=>"index"}
+  [4;36;1mLeague Load (0.1ms)[0m   [0;1mSELECT * FROM "leagues" WHERE ("leagues"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find League with ID=index):
+  app/controllers/leagues_controller.rb:11:in `show'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:42:10) [GET]
+  [4;35;1mLeague Load (0.4ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 24ms (View: 20, DB: 0) | 200 OK [http://localhost/leagues/]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:48:06) [GET]
+  [4;36;1mLeague Load (0.4ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/leagues/]
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 00:48:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mLeague Load (0.2ms)[0m   [0mSELECT * FROM "leagues" WHERE ("leagues"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering leagues/show
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/leagues/1]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:48:10) [GET]
+  [4;36;1mLeague Load (0.5ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 16ms (View: 11, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#edit (for 127.0.0.1 at 2010-12-30 00:48:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mLeague Load (0.2ms)[0m   [0mSELECT * FROM "leagues" WHERE ("leagues"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering leagues/edit
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/leagues/1/edit]
+
+
+Processing LeaguesController#update (for 127.0.0.1 at 2010-12-30 00:48:23) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"30CToL9R61XTJDBOGUqSa7XeLK3W4XyeMS0M0ssMjn0=", "id"=>"1", "league"=>{"name"=>"Ekstraklasa", "country"=>"Polska"}}
+  [4;36;1mLeague Load (0.5ms)[0m   [0;1mSELECT * FROM "leagues" WHERE ("leagues"."id" = 1) [0m
+Redirected to http://localhost:3000/leagues/1
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/leagues/1]
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 00:48:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mLeague Load (0.3ms)[0m   [0mSELECT * FROM "leagues" WHERE ("leagues"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering leagues/show
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/leagues/1]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:48:26) [GET]
+  [4;36;1mLeague Load (0.4ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:52:39) [GET]
+  [4;35;1mLeague Load (0.5ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 22ms (View: 17, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:52:43) [GET]
+  [4;36;1mLeague Load (0.4ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:52:46) [GET]
+  [4;35;1mLeague Load (0.4ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#new (for 127.0.0.1 at 2010-12-30 00:52:51) [GET]
+Rendering template within layouts/home
+Rendering leagues/new
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/leagues/new]
+
+
+Processing LeaguesController#create (for 127.0.0.1 at 2010-12-30 00:53:02) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"30CToL9R61XTJDBOGUqSa7XeLK3W4XyeMS0M0ssMjn0=", "league"=>{"name"=>"II liga", "country"=>"Polska"}}
+  [4;36;1mLeague Create (0.3ms)[0m   [0;1mINSERT INTO "leagues" ("name", "created_at", "country", "updated_at") VALUES('II liga', '2010-12-29 23:53:02', 'Polska', '2010-12-29 23:53:02')[0m
+Redirected to http://localhost:3000/leagues/3
+Completed in 204ms (DB: 0) | 302 Found [http://localhost/leagues]
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 00:53:02) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mLeague Load (0.2ms)[0m   [0mSELECT * FROM "leagues" WHERE ("leagues"."id" = 3) [0m
+Rendering template within layouts/home
+Rendering leagues/show
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/leagues/3]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:53:08) [GET]
+  [4;36;1mLeague Load (0.4ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#edit (for 127.0.0.1 at 2010-12-30 00:53:42) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mLeague Load (0.2ms)[0m   [0mSELECT * FROM "leagues" WHERE ("leagues"."id" = 3) [0m
+Rendering template within layouts/home
+Rendering leagues/edit
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/leagues/3/edit]
+
+
+Processing LeaguesController#update (for 127.0.0.1 at 2010-12-30 00:53:43) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"30CToL9R61XTJDBOGUqSa7XeLK3W4XyeMS0M0ssMjn0=", "id"=>"3", "league"=>{"name"=>"II liga", "country"=>"Polska"}}
+  [4;36;1mLeague Load (0.2ms)[0m   [0;1mSELECT * FROM "leagues" WHERE ("leagues"."id" = 3) [0m
+Redirected to http://localhost:3000/leagues/3
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/leagues/3]
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 00:53:44) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mLeague Load (0.2ms)[0m   [0mSELECT * FROM "leagues" WHERE ("leagues"."id" = 3) [0m
+Rendering template within layouts/home
+Rendering leagues/show
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/leagues/3]
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 00:53:56) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mLeague Load (0.2ms)[0m   [0;1mSELECT * FROM "leagues" WHERE ("leagues"."id" = 3) [0m
+Rendering template within layouts/home
+Rendering leagues/show
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/leagues/3]
+
+
+Processing LeaguesController#edit (for 127.0.0.1 at 2010-12-30 00:54:11) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mLeague Load (0.2ms)[0m   [0mSELECT * FROM "leagues" WHERE ("leagues"."id" = 3) [0m
+Rendering template within layouts/home
+Rendering leagues/edit
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/leagues/3/edit]
+
+
+Processing LeaguesController#update (for 127.0.0.1 at 2010-12-30 00:54:13) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"30CToL9R61XTJDBOGUqSa7XeLK3W4XyeMS0M0ssMjn0=", "id"=>"3", "league"=>{"name"=>"II liga", "country"=>"Polska"}}
+  [4;36;1mLeague Load (0.2ms)[0m   [0;1mSELECT * FROM "leagues" WHERE ("leagues"."id" = 3) [0m
+Redirected to http://localhost:3000/leagues/3
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/leagues/3]
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 00:54:13) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mLeague Load (0.2ms)[0m   [0mSELECT * FROM "leagues" WHERE ("leagues"."id" = 3) [0m
+Rendering template within layouts/home
+Rendering leagues/show
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/leagues/3]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:54:22) [GET]
+  [4;36;1mLeague Load (0.5ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 20ms (View: 15, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 00:55:38) [GET]
+  [4;35;1mLeague Load (0.5ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 23ms (View: 18, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 01:00:17) [GET]
+  [4;36;1mLeague Load (0.5ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 23ms (View: 17, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#new (for 127.0.0.1 at 2010-12-30 01:00:19) [GET]
+Rendering template within layouts/home
+Rendering leagues/new
+Completed in 15ms (View: 7, DB: 0) | 200 OK [http://localhost/leagues/new]
+
+
+Processing LeaguesController#create (for 127.0.0.1 at 2010-12-30 01:00:20) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"30CToL9R61XTJDBOGUqSa7XeLK3W4XyeMS0M0ssMjn0=", "league"=>{"name"=>"", "country"=>""}}
+Rendering template within layouts/home
+Rendering leagues/new
+Completed in 21ms (View: 14, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 01:02:31) [GET]
+  [4;35;1mLeague Load (0.4ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 24ms (View: 19, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 01:03:20) [GET]
+  [4;36;1mLeague Load (0.7ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 21ms (View: 16, DB: 1) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#new (for 127.0.0.1 at 2010-12-30 01:03:36) [GET]
+Rendering template within layouts/home
+Rendering leagues/new
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/leagues/new]
+
+
+Processing LeaguesController#create (for 127.0.0.1 at 2010-12-30 01:03:38) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"30CToL9R61XTJDBOGUqSa7XeLK3W4XyeMS0M0ssMjn0=", "league"=>{"name"=>"", "country"=>""}}
+Rendering template within layouts/home
+Rendering leagues/new
+Completed in 21ms (View: 14, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#create (for 127.0.0.1 at 2010-12-30 01:04:12) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"30CToL9R61XTJDBOGUqSa7XeLK3W4XyeMS0M0ssMjn0=", "league"=>{"name"=>"III liga", "country"=>"Polska"}}
+  [4;35;1mLeague Create (0.3ms)[0m   [0mINSERT INTO "leagues" ("name", "created_at", "country", "updated_at") VALUES('III liga', '2010-12-30 00:04:12', 'Polska', '2010-12-30 00:04:12')[0m
+Redirected to http://localhost:3000/leagues/4
+Completed in 211ms (DB: 0) | 302 Found [http://localhost/leagues]
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 01:04:12) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mLeague Load (0.2ms)[0m   [0;1mSELECT * FROM "leagues" WHERE ("leagues"."id" = 4) [0m
+Rendering template within layouts/home
+Rendering leagues/show
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/leagues/4]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 01:04:20) [GET]
+  [4;35;1mLeague Load (0.5ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 23ms (View: 17, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 01:04:49) [GET]
+  [4;36;1mLeague Load (0.5ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 23ms (View: 18, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 01:05:08) [GET]
+  [4;35;1mLeague Load (0.5ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 22ms (View: 17, DB: 1) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 01:05:20) [GET]
+  [4;36;1mLeague Load (0.5ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 21ms (View: 16, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 01:05:34) [GET]
+  [4;35;1mLeague Load (0.6ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 22ms (View: 17, DB: 1) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 01:05:49) [GET]
+  [4;36;1mLeague Load (0.5ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 24ms (View: 17, DB: 1) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 01:06:18) [GET]
+  [4;35;1mLeague Load (0.5ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 22ms (View: 17, DB: 1) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 01:06:32) [GET]
+  [4;36;1mLeague Load (0.7ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 23ms (View: 17, DB: 1) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 01:08:11) [GET]
+  [4;35;1mLeague Load (0.5ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 31ms (View: 26, DB: 1) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 01:08:53) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mLeague Load (0.2ms)[0m   [0;1mSELECT * FROM "leagues" WHERE ("leagues"."id" = 3) [0m
+Rendering template within layouts/home
+Rendering leagues/show
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/leagues/3]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 01:08:57) [GET]
+  [4;35;1mLeague Load (0.5ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 23ms (View: 17, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 01:09:15) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mLeague Load (0.2ms)[0m   [0;1mSELECT * FROM "leagues" WHERE ("leagues"."id" = 3) [0m
+Rendering template within layouts/home
+Rendering leagues/show
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/leagues/3]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 01:09:18) [GET]
+  [4;35;1mLeague Load (0.5ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 21ms (View: 17, DB: 1) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#edit (for 127.0.0.1 at 2010-12-30 01:09:19) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mLeague Load (0.2ms)[0m   [0;1mSELECT * FROM "leagues" WHERE ("leagues"."id" = 2) [0m
+Rendering template within layouts/home
+Rendering leagues/edit
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/leagues/2/edit]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 01:09:24) [GET]
+  [4;35;1mLeague Load (0.6ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 22ms (View: 17, DB: 1) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 01:12:51) [GET]
+  [4;36;1mLeague Load (0.5ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 27ms (View: 22, DB: 0) | 200 OK [http://localhost/leagues]
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 01:12:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mLeague Load (0.2ms)[0m   [0mSELECT * FROM "leagues" WHERE ("leagues"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering leagues/show
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/leagues/1]
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 01:13:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mLeague Load (0.2ms)[0m   [0;1mSELECT * FROM "leagues" WHERE ("leagues"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering leagues/show
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/leagues/1]
+
+
+Processing LeaguesController#show (for 127.0.0.1 at 2010-12-30 01:13:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mLeague Load (0.2ms)[0m   [0mSELECT * FROM "leagues" WHERE ("leagues"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering leagues/show
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/leagues/1]
+
+
+Processing LeaguesController#index (for 127.0.0.1 at 2010-12-30 01:14:05) [GET]
+  [4;36;1mLeague Load (0.5ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering leagues/index
+Completed in 22ms (View: 17, DB: 0) | 200 OK [http://localhost/leagues]

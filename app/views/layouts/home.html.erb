@@ -5,6 +5,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <%= stylesheet_link_tag "style", :media => "all" %>
+    <%= stylesheet_link_tag "scaffold", :media => "all" %>
     <title>Strona domowa</title>
         
   </head>
@@ -15,7 +16,7 @@
     <div class="head">
       <div id="side"><br/>
         <%= link_to image_tag("buttons/home.jpg"), { :controller => "home" }, :class => "button" %> <br/><br/>
-        <a href=".../leagues" class="button"><%= image_tag('buttons/league.jpg') %></a><br/><br/>
+        <%= link_to image_tag("buttons/league.jpg"), { :controller => "leagues" }, :class => "button" %> <br/><br/>
         <a href=".../teams" class="button"><%= image_tag('buttons/team.jpg') %></a><br/><br/>
         <a href=".../players" class="button"><%= image_tag('buttons/player.jpg') %></a><br/><br/>
         <a href=".../matches" class="button"><%= image_tag('buttons/match.jpg') %></a><br/><br/>
@@ -25,6 +26,11 @@
                 
       </div>
       <div id="main">
+        <% if flash[:notice]  %>
+          <div id="notice">
+            <%= flash[:notice] %>
+          </div>
+        <% end  %>
           <%= yield :layout %>
       </div>
             

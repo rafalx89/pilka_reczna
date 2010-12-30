@@ -66,3 +66,24 @@ body
     margin: 5px;
     margin: 0 auto;
 }
+
+.show
+{
+  position: relative;
+  padding: 5px;
+  margin-bottom: 3px;
+}
+
+span.name
+{
+  color: #006400;
+  font-weight: bold;
+}
+#notice
+{
+  border: 2px solid green;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: gray;
+  font: bold smaller sans-serif;
+}

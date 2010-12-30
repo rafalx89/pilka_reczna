@@ -1,0 +1,19 @@
+<h1>Nowa liga</h1>
+
+<% form_for(@league) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
+  </p>
+  <p>
+    <%= f.submit 'Stwórz' %>
+  </p>
+<% end %>
+
+<%= link_to 'Cofnij', leagues_path %>

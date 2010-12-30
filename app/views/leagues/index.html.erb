@@ -1,0 +1,17 @@
+<h1>Ligi</h1>
+
+<% @leagues.each do |league| %>
+  <div class="show">
+    <h3><span class="name">Nazwa: </span><%=h league.name %></h3><br/>
+    <span class="name">ID: </span><%=h league.id %><br/>
+    <span class="name">Kraj: </span><%=h league.country %><br/>
+    <%= link_to 'Pokaż', league %>
+    <%= link_to 'Edytuj', edit_league_path(league) %>
+    <%= link_to 'Usuń', league, :confirm => 'Jesteś pewien?', :method => :delete %>
+    <hr />
+    </div>
+<% end %>
+<br />
+<div class="show">
+  <%= link_to 'Nowa liga', new_league_path %>
+</div>
