@@ -1,0 +1,19 @@
+<h1>Zespoły</h1>
+
+<% @teams.each do |team| %>
+  <div class="show">
+    <h3><span class="name">Nazwa: </span><%=h team.name %></h3><br/>
+    <%= !team.image_url.nil? ? image_tag(team.image_url) : image_tag('images/rails.png') %><br/>
+    <span class="name">ID: </span><%=h team.id %><br/>
+    <span class="name">Trener: </span><%=h team.coach %><br/>
+    <span class="name">Liga: </span> <%= link_to h(team.league.name), team.league%> <br/>
+    <%= link_to 'Pokaż', team_path(team) %>
+    <%= link_to 'Edytuj', edit_team_path(team) %>
+    <%= link_to 'Usun' ,  team, :confirm => 'Jesteś pewien?', :method => :delete %>
+    <hr />
+    </div>
+<% end %>
+<br />
+<div class="show">
+  <%= link_to 'Nowy zespół', new_team_path %>
+</div>

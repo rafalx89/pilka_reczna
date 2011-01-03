@@ -1,5 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
+
   map.resources :leagues
+  map.resources :teams
 
   # The priority is based upon order of creation: first created -> highest priority.
 

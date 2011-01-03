@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @team.name %>
+</p>
+
+<p>
+  <b>Coach:</b>
+  <%=h @team.coach %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%=h @team.image_url %>
+</p>
+
+<p>
+  <b>League:</b>
+  <%=h @team.league.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_team_path %> 
+<%= link_to 'Back', teams_path %>
