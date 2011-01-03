@@ -65,4 +65,5 @@ class TeamsController < ApplicationController
   def find_league
     @league = League.all
   end
+
 end
