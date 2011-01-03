@@ -36529,3 +36529,97 @@ ActionController::RoutingError (No route matches "/images/sadf" with {:method=>:
   /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
 
 Rendering rescues/layout (not_found)
+
+
+Processing TeamsController#index (for 127.0.0.1 at 2011-01-03 20:32:16) [GET]
+  [4;35;1mLeague Load (0.6ms)[0m   [0mSELECT * FROM "leagues" [0m
+  [4;36;1mTeam Load (0.4ms)[0m   [0;1mSELECT * FROM "teams" [0m
+Rendering template within layouts/home
+Rendering teams/index
+  [4;35;1mLeague Load (0.2ms)[0m   [0mSELECT * FROM "leagues" WHERE ("leagues"."id" = 6) [0m
+  [4;36;1mLeague Load (0.2ms)[0m   [0;1mSELECT * FROM "leagues" WHERE ("leagues"."id" = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "leagues" WHERE ("leagues"."id" = 6) [0m
+Completed in 30ms (View: 21, DB: 1) | 200 OK [http://localhost/teams]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-03 20:32:16) [GET]
+
+ActionController::RoutingError (No route matches "/images/sadf" with {:method=>:get}):
+  /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing TeamsController#new (for 127.0.0.1 at 2011-01-03 20:32:19) [GET]
+  [4;36;1mLeague Load (0.6ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering teams/new
+
+ActionView::TemplateError (undefined method `namecountry' for #<League:0xb6dc46f8>) on line #20 of app/views/teams/new.html.erb:
+17:   </p>
+18:   <p>
+19:     <%= f.label :league %>
+20:     <%= f.select :league_id, options_from_collection_for_select(@league, :id, 'name' + 'country'), :prompt => "Wybierz ligę" %>
+21:   </p>
+22:   
+23: 
+
+    app/views/teams/new.html.erb:20
+    app/views/teams/new.html.erb:3
+    /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/railis/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (59.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TeamsController#new (for 127.0.0.1 at 2011-01-03 20:32:34) [GET]
+  [4;36;1mLeague Load (0.6ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering teams/new
+Completed in 25ms (View: 15, DB: 1) | 200 OK [http://localhost/teams/new]
+
+
+Processing TeamsController#new (for 127.0.0.1 at 2011-01-03 20:32:45) [GET]
+  [4;36;1mLeague Load (0.5ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering teams/new
+Completed in 25ms (View: 16, DB: 1) | 200 OK [http://localhost/teams/new]
+
+
+Processing TeamsController#new (for 127.0.0.1 at 2011-01-03 20:32:46) [GET]
+  [4;36;1mLeague Load (0.5ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering teams/new
+Completed in 18ms (View: 10, DB: 1) | 200 OK [http://localhost/teams/new]
+  [4;36;1mLeague Load (0.6ms)[0m   [0;1mSELECT * FROM "leagues" ORDER BY leagues.id DESC LIMIT 1[0m
+
+
+Processing TeamsController#new (for 127.0.0.1 at 2011-01-03 20:35:35) [GET]
+  [4;36;1mLeague Load (0.5ms)[0m   [0;1mSELECT * FROM "leagues" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "leagues" [0m
+Rendering template within layouts/home
+Rendering teams/new
+Completed in 24ms (View: 15, DB: 1) | 200 OK [http://localhost/teams/new]
