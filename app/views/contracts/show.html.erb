@@ -1,0 +1,23 @@
+<p>
+  <b>Player:</b>
+  <%=h @contract.player %>
+</p>
+
+<p>
+  <b>Team:</b>
+  <%=h @contract.team %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%=h @contract.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%=h @contract.end_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_contract_path(@contract) %> |
+<%= link_to 'Back', contracts_path %>

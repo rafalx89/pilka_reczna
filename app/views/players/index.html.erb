@@ -1,0 +1,30 @@
+<h1>Zawodnicy</h1>
+
+<% @players.each do |player| %>
+  <div class="show">
+    <h3><span class="name">Imie: </span><%=h player.firstname %></h3><br/>
+    <span class="name">Nazwisko: </span><%=h player.surname %><br/>
+    <span class="name">Kraj: </span><%=h player.country %><br/>
+    <span class="name">Data urodzenia: </span> <%=h player.birth_date%> <br/>
+    <span class="name">Pozycja: </span> <%=h player.position%> <br/>
+    <span class="name">Numer koszulki: </span> <%=h player.shirt_no%> <br/>
+    <span class="name">Zespół: </span>  <% if player.team != nil %>
+                                          <%= link_to h(player.team.name), player.team %> <br/>
+                                        <% else  %>
+                                          Brak <br/>
+                                        <% end  %>
+    <span class="name">Kontrak: </span> <%= "TODO"%> <br/>
+
+    <%= link_to 'Pokaż',  player %>
+    <%= link_to 'Edytuj', edit_player_path(player) %>
+    <%= link_to 'Usun' ,  player, :confirm => 'Jesteś pewien?', :method => :delete %>
+    <hr />
+    </div>
+<% end %>
+<br />
+<div class="show">
+  <%= link_to 'Nowy zawodnik', new_player_path %>
+</div>
+
+
+

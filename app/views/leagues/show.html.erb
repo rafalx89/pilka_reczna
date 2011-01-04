@@ -2,7 +2,10 @@
 
 <span class="name">Nazwa</span> <%=h @league.name %><br/>
 <span class="name">Kraj: </span><%=h @league.country %><br/> <br/>
-
+<span class="name">Zespoly: </span><br/>
+<% @league.teams.each do |team|  %>
+      <%= h team.name %><br/>
+    <% end  %>
 
 <%= link_to 'Edit', edit_league_path(@league) %> |
 <%= link_to 'Back', leagues_path %>

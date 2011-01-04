@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  player: 
+  team: 
+  start_date: 2011-01-03
+  end_date: 2011-01-03
+
+two:
+  player: 
+  team: 
+  start_date: 2011-01-03
+  end_date: 2011-01-03

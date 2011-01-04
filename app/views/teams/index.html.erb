@@ -7,7 +7,7 @@
     <span class="name">ID: </span><%=h team.id %><br/>
     <span class="name">Trener: </span><%=h team.coach %><br/>
     <span class="name">Liga: </span> <%= link_to h(team.league.name), team.league%> <br/>
-    <%= link_to 'Pokaż', team_path(team) %>
+    <%= link_to 'Pokaż',  team %>
     <%= link_to 'Edytuj', edit_team_path(team) %>
     <%= link_to 'Usun' ,  team, :confirm => 'Jesteś pewien?', :method => :delete %>
     <hr />

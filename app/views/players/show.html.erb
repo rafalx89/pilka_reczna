@@ -1,0 +1,28 @@
+  <div class="show">
+    <h3><span class="name">Imie: </span><%=h @player.firstname %></h3><br/>
+    <span class="name">Nazwisko: </span><%=h @player.surname %><br/>
+    <span class="name">Kraj: </span><%=h @player.country %><br/>
+    <span class="name">Data urodzenia: </span> <%=h @player.birth_date%> <br/>
+    <span class="name">Pozycja: </span> <%=h @player.position%> <br/>
+    <span class="name">Numer koszulki: </span> <%=h @player.shirt_no%> <br/>
+    <span class="name">Zespół: </span>  <% if @player.team != nil %>
+                                          <%= link_to h(@player.team.name), @player.team %> <br/>
+                                        <% else  %>
+                                          Brak <br/>
+                                        <% end  %>
+                                        <span class="name">Aktywny kontrakt: </span>
+                                        <% if @player.active_contract != nil  %>
+                                        <%=h @player.active_contract.team.name %> <br/>
+                                        <%=h "#{@player.active_contract.start_date}, Data zakonczenia: #{@player.active_contract.end_date}" %> | 
+                                        <%= link_to "Zakoncz kontrakt", player_contract_path(@player), :confirm => "Jesteś pewien?", :method => :delete %><br/>
+                                        <% else  %>
+                                          Brak aktywnego kontraktu <br/>                                        
+                                        <% end  %>
+    <%= render :partial => 'contract' %>
+
+    <%= link_to 'Edytuj', edit_player_path(@player) %> |
+    <%= link_to 'Usun' ,  @player, :confirm => 'Jesteś pewien?', :method => :delete %> |
+    <%= link_to 'Nowy kontrakt', new_player_contract_path(@player) %>
+    <hr />
+    </div>
+

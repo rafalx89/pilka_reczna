@@ -1,0 +1,8 @@
+<h3>Lista Konraktów</h3>
+<% @contracts.each do |c|  %>
+  <span class = "name" >
+    Zespół: 
+  </span>
+  <%= c.team.name %> <br/>
+  <%= "Data rozpoczęcia: #{c.start_date}, Data zakonczenia #{c.end_date}  "  %> <br/>
+<% end  %>

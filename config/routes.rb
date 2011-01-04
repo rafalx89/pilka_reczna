@@ -1,4 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
+  #map.resources :contracts
+
+  map.resources :players do |player|
+    player.resources :contracts
+  end
+
 
   map.resources :leagues
   map.resources :teams

@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  firstname: MyString
+  surname: MyString
+  country: MyString
+  birth_date: 2011-01-03
+  position: MyString
+  shirt_no: 1
+  team: 
+
+two:
+  firstname: MyString
+  surname: MyString
+  country: MyString
+  birth_date: 2011-01-03
+  position: MyString
+  shirt_no: 1
+  team: 
