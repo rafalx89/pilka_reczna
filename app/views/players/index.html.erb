@@ -1,0 +1,11 @@
+<% @players.each do |p| -%>
+  <h3><span class="name">Nazwa:</span> <%= p.firstname || "nieznane" %> <%= p.lastname || "nieznane" %></h3>
+
+  <p><span class="name">Pozycja</span> <%= p.position %></p>
+  <p><span class="name">Numer</span> <%= p.shirt_number %></p>
+  <p><span class="name">Zespol</span> <%= p.current_team ? p.current_team.name : "not assigned" %></p>
+  <%= link_to 'show', player_path(p) %>
+  <hr>
+<% end -%>
+
+<%= link_to 'New', new_player_path %>

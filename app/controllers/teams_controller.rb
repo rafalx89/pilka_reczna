@@ -12,6 +12,7 @@ class TeamsController < ApplicationController
   # GET /teams/1.xml
   def show
     @team = Team.find(params[:id])
+    @players = @team.current_players
   end
 
   # GET /teams/new

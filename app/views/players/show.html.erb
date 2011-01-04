@@ -1,0 +1,21 @@
+<h3><span class="name">Nazwa:</span> <%= @player.firstname || "nieznane" %> <%= @player.lastname || "nieznane" %></h3>
+
+<p><span class="name">Pozycja</span> <%= @player.position %></p>
+<p><span class="name">Numer</span> <%= @player.shirt_number %></p>
+<p><span class="name">Zespol</span> <%= @player.current_team ? @player.current_team.name : "not assigned" %></p>
+
+<br />
+<h4>Contracts:</h4>
+
+<% @contracts.each do |c| -%>
+  <p>
+  <span class="name">Team: </span><%= c.team.name %> |
+  <strong><%= !c.active? ? "resigned at: #{c.resigned_at}" : "active" %></strong>
+  </p>
+<% end -%>
+
+<%= link_to 'New contract', new_player_contract_path(@player) %>
+
+
+
+<hr>

@@ -18,6 +18,12 @@
   <%=h @team.league.name %>
 </p>
 
+<h4>Players:</h4>
+<% @players.each do |p| -%>
+  <p><%= "#{p.shirt_number}, #{p.firstname} #{p.lastname}" %><p>
+<% end -%>
+<br />
+
 
 <%= link_to 'Edit', edit_team_path %> 
 <%= link_to 'Back', teams_path %>

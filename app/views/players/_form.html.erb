@@ -1,0 +1,19 @@
+<% form_for @player do |f| -%>
+  <%= f.error_messages %>
+  <p>
+  <%= f.label :firstname, 'FirstName' %>
+  <%= f.text_field :firstname %>
+  </p>
+
+  <p>
+  <%= f.label :lastname, 'LastName' %>
+  <%= f.text_field :lastname %>
+  </p>
+
+  <p>
+  <%= f.label :shirt_number, 'Number' %>
+  <%= f.text_field :shirt_number %>
+  </p>
+
+  <%= f.submit "submit" %>
+<% end -%>

@@ -9,11 +9,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101230152010) do
+ActiveRecord::Schema.define(:version => 20110103221120) do
+
+  create_table "contracts", :force => true do |t|
+    t.integer  "player_id"
+    t.integer  "team_id"
+    t.datetime "resigned_at"
+    t.boolean  "active",      :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "leagues", :force => true do |t|
     t.string   "name"
     t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "players", :force => true do |t|
+    t.string   "firstname"
+    t.string   "lastname"
+    t.integer  "shirt_number"
+    t.integer  "position"
+    t.integer  "country"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

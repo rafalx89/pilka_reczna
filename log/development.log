@@ -36623,3 +36623,178 @@ Processing TeamsController#new (for 127.0.0.1 at 2011-01-03 20:35:35) [GET]
 Rendering template within layouts/home
 Rendering teams/new
 Completed in 24ms (View: 15, DB: 1) | 200 OK [http://localhost/teams/new]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateLeagues (20101229230707)
+Migrating to CreateTeams (20101230152010)
+Migrating to CreateContracts (20110103221105)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "contracts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "player_id" integer, "team_id" integer, "resigned_at" datetime, "active" boolean DEFAULT 'f', "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110103221105')[0m
+Migrating to CreatePlayers (20110103221120)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "players" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "firstname" varchar(255), "lastname" varchar(255), "shirt_number" integer, "position" integer, "country" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110103221120')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("contracts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("leagues")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("players")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("teams")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateLeagues (20101229230707)
+Migrating to CreateTeams (20101230152010)
+Migrating to CreateContracts (20110103221105)
+Migrating to CreatePlayers (20110103221120)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("contracts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("leagues")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("players")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("teams")[0m
+  [4;36;1mTeam Load (0.7ms)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeam Load (0.3ms)[0m   [0mSELECT * FROM "teams" LIMIT 1[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT "players".* FROM "players" INNER JOIN "contracts" ON "players".id = "contracts".player_id WHERE (("contracts".team_id = 19)) [0m
+  [4;35;1mContract Load (0.2ms)[0m   [0mSELECT * FROM "contracts" WHERE ("contracts".team_id = 19) [0m
+  [4;36;1mPlayer Create (0.5ms)[0m   [0;1mINSERT INTO "players" ("position", "created_at", "country", "updated_at", "lastname", "firstname", "shirt_number") VALUES(2, '2011-01-03 22:26:25', 3, '2011-01-03 22:26:25', 'Kecaj', 'Jacek', 7)[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" [0m
+  [4;36;1mContract Load (0.2ms)[0m   [0;1mSELECT * FROM "contracts" WHERE ("contracts".player_id = 1) [0m
+  [4;35;1mContract Create (0.3ms)[0m   [0mINSERT INTO "contracts" ("created_at", "resigned_at", "updated_at", "player_id", "team_id", "active") VALUES('2011-01-03 22:27:16', NULL, '2011-01-03 22:27:16', 1, 19, 't')[0m
+  [4;36;1mContract Load (0.3ms)[0m   [0;1mSELECT * FROM "contracts" [0m
+  [4;35;1mContract Load (0.5ms)[0m   [0mSELECT * FROM "contracts" LIMIT 1[0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 19) [0m
+  [4;35;1mPlayer Load (0.2ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 1) [0m
+  [4;36;1mContract Load (0.3ms)[0m   [0;1mSELECT * FROM "contracts" WHERE ("contracts".player_id = 1) [0m
+  [4;35;1mContract Load (0.3ms)[0m   [0mSELECT * FROM "contracts" WHERE ("contracts".team_id = 19) [0m
+  [4;36;1mContract Load (41.9ms)[0m   [0;1mSELECT * FROM "contracts" WHERE ("contracts".player_id = 1 AND ("contracts"."active" = 't')) LIMIT 1[0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 19) [0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT "players".* FROM "players" INNER JOIN "contracts" ON "players".id = "contracts".player_id WHERE (("contracts".team_id = 19)) [0m
+  [4;35;1mTeam Load (0.3ms)[0m   [0mSELECT "teams".* FROM "teams" INNER JOIN "contracts" ON "teams".id = "contracts".team_id WHERE (("contracts".player_id = 1)) [0m
+  [4;36;1mPlayer Load (0.6ms)[0m   [0;1mSELECT * FROM "players" ORDER BY players.id DESC LIMIT 1[0m
+  [4;35;1mContract Load (0.3ms)[0m   [0mSELECT * FROM "contracts" WHERE ("contracts".player_id = 1) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 19) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 3) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 1) [0m
+  [4;36;1mTeam Load (0.3ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mContract Delete all (96.7ms)[0m   [0;1mDELETE FROM "contracts" WHERE 1=1[0m
+  [4;35;1mContract Load (0.3ms)[0m   [0mSELECT * FROM "contracts" [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 1) [0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 1) [0m
+  [4;36;1mContract Load (0.2ms)[0m   [0;1mSELECT * FROM "contracts" WHERE ("contracts".player_id = 1 AND ("contracts"."active" = 't')) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 1) [0m
+  [4;36;1mContract Load (0.2ms)[0m   [0;1mSELECT * FROM "contracts" WHERE ("contracts".player_id = 1 AND ("contracts"."active" = 't')) LIMIT 1[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 1) [0m
+  [4;36;1mContract Load (0.2ms)[0m   [0;1mSELECT * FROM "contracts" WHERE ("contracts".player_id = 1 AND ("contracts"."active" = 't')) LIMIT 1[0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 19) [0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 1) [0m
+  [4;35;1mContract Load (0.3ms)[0m   [0mSELECT * FROM "contracts" WHERE ("contracts".player_id = 1 AND ("contracts"."active" = 't')) LIMIT 1[0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 19) [0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 1) [0m
+  [4;36;1mContract Load (0.2ms)[0m   [0;1mSELECT * FROM "contracts" WHERE ("contracts".player_id = 1 AND ("contracts"."active" = 't')) LIMIT 1[0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 19) [0m
+  [4;36;1mContract Delete all (96.8ms)[0m   [0;1mDELETE FROM "contracts" WHERE 1=1[0m
+  [4;35;1mContract Delete all (88.9ms)[0m   [0mDELETE FROM "contracts" WHERE 1=1[0m
+  [4;36;1mTeam Load (0.3ms)[0m   [0;1mSELECT * FROM "teams" LIMIT 1[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT "players".* FROM "players" INNER JOIN "contracts" ON "players".id = "contracts".player_id WHERE (("contracts".team_id = 19)) [0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" [0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" [0m
+  [4;36;1mContract Load (0.2ms)[0m   [0;1mSELECT * FROM "contracts" WHERE ("contracts".player_id = 1 AND ("contracts"."active" = 't')) LIMIT 1[0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 22) [0m
+  [4;36;1mLeague Load (0.3ms)[0m   [0;1mSELECT * FROM "leagues" LIMIT 1[0m
+  [4;35;1mLeague Load (0.3ms)[0m   [0mSELECT * FROM "leagues" LIMIT 1[0m
+  [4;36;1mLeague Load (0.3ms)[0m   [0;1mSELECT * FROM "leagues" LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mTeam Load (0.3ms)[0m   [0;1mSELECT * FROM "teams" LIMIT 1[0m
+  [4;35;1mTeam Load (1.0ms)[0m   [0mSELECT * FROM "teams" LIMIT 1[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT "players".* FROM "players" INNER JOIN "contracts" ON "players".id = "contracts".player_id WHERE (("contracts".team_id = 19)) [0m
+  [4;35;1mTeam Load (0.3ms)[0m   [0mSELECT * FROM "teams" LIMIT 1[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT "players".* FROM "players" INNER JOIN "contracts" ON "players".id = "contracts".player_id WHERE (("contracts".team_id = 19)) [0m
+  [4;35;1mTeam Load (0.3ms)[0m   [0mSELECT * FROM "teams" LIMIT 1[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT "players".* FROM "players" INNER JOIN "contracts" ON "players".id = "contracts".player_id WHERE (("contracts".team_id = 19)) [0m
+  [4;35;1mTeam Load (0.3ms)[0m   [0mSELECT * FROM "teams" LIMIT 1[0m
+  [4;36;1mPlayer Load (0.2ms)[0m   [0;1mSELECT "players".* FROM "players" INNER JOIN "contracts" ON "players".id = "contracts".player_id WHERE (("contracts".team_id = 19)) [0m
+  [4;35;1mContract Load (0.2ms)[0m   [0mSELECT * FROM "contracts" WHERE ("contracts".player_id = 1 AND ("contracts"."active" = 't')) LIMIT 1[0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 22) [0m
+  [4;35;1mTeam Load (0.5ms)[0m   [0mSELECT * FROM "teams" LIMIT 1[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT "players".* FROM "players" INNER JOIN "contracts" ON "players".id = "contracts".player_id WHERE (("contracts".team_id = 19)) [0m
+  [4;35;1mContract Load (0.3ms)[0m   [0mSELECT * FROM "contracts" WHERE ("contracts".player_id = 1 AND ("contracts"."active" = 't')) LIMIT 1[0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 22) [0m
+  [4;35;1mContract Delete all (98.2ms)[0m   [0mDELETE FROM "contracts" WHERE 1=1[0m
+  [4;36;1mTeam Load (0.6ms)[0m   [0;1mSELECT * FROM "teams" [0m
+  [4;35;1mTeam Load (0.3ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 20) [0m
+  [4;36;1mTeam Load (0.3ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 20) [0m
+  [4;35;1mPlayer Load (0.4ms)[0m   [0mSELECT "players".* FROM "players" INNER JOIN "contracts" ON "players".id = "contracts".player_id WHERE (("contracts".team_id = 20)) [0m
+  [4;36;1mContract Delete all (99.5ms)[0m   [0;1mDELETE FROM "contracts" WHERE 1=1[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" LIMIT 1[0m
+  [4;36;1mPlayer Load (0.3ms)[0m   [0;1mSELECT * FROM "players" WHERE ("players"."id" = 2) [0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 2) [0m
+  [4;36;1mContract Load (0.3ms)[0m   [0;1mSELECT * FROM "contracts" WHERE ("contracts".player_id = 2) [0m
+  [4;35;1mTeam Load (0.3ms)[0m   [0mSELECT * FROM "teams" LIMIT 1[0m
+  [4;36;1mTeam Load (0.3ms)[0m   [0;1mSELECT * FROM "teams" LIMIT 1[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT "players".* FROM "players" INNER JOIN "contracts" ON "players".id = "contracts".player_id WHERE (("contracts".team_id = 19)) [0m
+  [4;36;1mTeam Load (0.3ms)[0m   [0;1mSELECT * FROM "teams" LIMIT 1[0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT "players".* FROM "players" INNER JOIN "contracts" ON "players".id = "contracts".player_id WHERE (("contracts".team_id = 19)) [0m
+  [4;36;1mContract Load (0.2ms)[0m   [0;1mSELECT * FROM "contracts" WHERE ("contracts".player_id = 2 AND ("contracts"."active" = 't')) LIMIT 1[0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 19) [0m
+  [4;36;1mContract Load (0.2ms)[0m   [0;1mSELECT * FROM "contracts" WHERE ("contracts".player_id = 3 AND ("contracts"."active" = 't')) LIMIT 1[0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 20) [0m
+  [4;36;1mContract Load (0.2ms)[0m   [0;1mSELECT * FROM "contracts" WHERE ("contracts".player_id = 2 AND ("contracts"."active" = 't')) LIMIT 1[0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 19) [0m
+  [4;36;1mTeam Load (0.5ms)[0m   [0;1mSELECT * FROM "teams" LIMIT 1[0m
+  [4;35;1mTeam Load (0.3ms)[0m   [0mSELECT * FROM "teams" LIMIT 1[0m
+  [4;36;1mContract Load (0.4ms)[0m   [0;1mSELECT * FROM "contracts" WHERE ("contracts".team_id = 19) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 19) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 19) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 19) [0m
+  [4;36;1mTeam Load (0.5ms)[0m   [0;1mSELECT * FROM "teams" LIMIT 1[0m
+  [4;35;1mContract Load (0.3ms)[0m   [0mSELECT * FROM "contracts" WHERE ("contracts".team_id = 19) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 19) [0m
+  [4;35;1mTeam Load (0.2ms)[0m   [0mSELECT * FROM "teams" WHERE ("teams"."id" = 19) [0m
+  [4;36;1mTeam Load (0.2ms)[0m   [0;1mSELECT * FROM "teams" WHERE ("teams"."id" = 19) [0m
+  [4;35;1mPlayer Load (0.3ms)[0m   [0mSELECT * FROM "players" WHERE ("players"."id" = 2) [0m

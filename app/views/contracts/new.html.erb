@@ -1,0 +1,10 @@
+<h2>Select team</h2>
+
+<% form_for [@player, @contract] do |f| -%>
+
+  <%= f.label :team_id, 'Select team' %>
+  <%= f.select :team_id, options_from_collection_for_select(@teams, 'id', 'name') %>
+
+  <%= f.error_messages %>
+  <%= f.submit "submit" %>
+<% end -%>
