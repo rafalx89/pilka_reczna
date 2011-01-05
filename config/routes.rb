@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :matchdays
+
+  map.resources :seasons
+
   #map.resources :contracts
 
   map.resources :players do |player|

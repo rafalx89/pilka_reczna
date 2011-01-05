@@ -1,0 +1,18 @@
+<h1>Sezony</h1>
+
+<% @seasons.each do |season| %>
+  <div class="show">
+    <h3><span class="name">ID: </span><%=h season.season_no %></h3><br/>
+    <span class="name">Data rozpoczęcia: </span><%=h season.start_date %><br/>
+    <span class="name">Data zakonczenia: </span> <%= h season.end_date%> <br/>
+    <%= link_to 'Pokaż',  season %>
+    <%= link_to 'Edytuj', edit_season_path(season) %>
+    <%= link_to 'Usun' ,  season, :confirm => 'Jesteś pewien?', :method => :delete %>
+    <hr />
+    </div>
+<% end %>
+<br />
+<div class="show">
+  <%= link_to 'Nowy sezon', new_season_path %>
+</div>
+

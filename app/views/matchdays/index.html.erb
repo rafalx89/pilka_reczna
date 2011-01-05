@@ -1,0 +1,24 @@
+<h1>Listing matchdays</h1>
+
+<table>
+  <tr>
+    <th>Matchday no</th>
+    <th>Season</th>
+    <th>Play time</th>
+  </tr>
+
+<% @matchdays.each do |matchday| %>
+  <tr>
+    <td><%=h matchday.matchday_no %></td>
+    <td><%=h matchday.season %></td>
+    <td><%=h matchday.play_time %></td>
+    <td><%= link_to 'Show', matchday %></td>
+    <td><%= link_to 'Edit', edit_matchday_path(matchday) %></td>
+    <td><%= link_to 'Destroy', matchday, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New matchday', new_matchday_path %>

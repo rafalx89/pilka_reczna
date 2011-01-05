@@ -1,0 +1,8 @@
+<h3>Sezon</h3>
+<span class="name">ID: </span> <%=h @season.id %><br/>
+<span class="name">Data rozpoczecia: </span><%=h @season.start_date %><br/> 
+<span class="name">Data zakonczenia: </span><%=h @season.end_date %><br/><br/>
+
+
+<%= link_to 'Edit', edit_season_path(@season) %> |
+<%= link_to 'Back', seasons_path %>

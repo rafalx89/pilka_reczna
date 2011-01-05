@@ -1,0 +1,18 @@
+<p>
+  <b>Matchday no:</b>
+  <%=h @matchday.matchday_no %>
+</p>
+
+<p>
+  <b>Season:</b>
+  <%=h @matchday.season %>
+</p>
+
+<p>
+  <b>Play time:</b>
+  <%=h @matchday.play_time %>
+</p>
+
+
+<%= link_to 'Edit', edit_matchday_path(@matchday) %> |
+<%= link_to 'Back', matchdays_path %>

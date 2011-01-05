@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  season_no: 1
+  start_date: 2011-01-05
+  end_date: 2011-01-05
+
+two:
+  season_no: 1
+  start_date: 2011-01-05
+  end_date: 2011-01-05

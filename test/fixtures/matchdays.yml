@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  matchday_no: 1
+  season: 
+  play_time: 2011-01-05
+
+two:
+  matchday_no: 1
+  season: 
+  play_time: 2011-01-05

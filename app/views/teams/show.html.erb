@@ -2,13 +2,13 @@
 <p>
   <%=image_tag @team.image_url %>
 </p>
-<span class="name">Nazwa</span> <%=h @team.name %><br/>
+<span class="name">Nazwai: </span> <%=h @team.name %><br/>
 <span class="name">Trener: </span><%=h @team.coach %><br/> 
 <span class="name">Liga: </span><%=h @team.league.name %><br/><br/>
 <span class="name">Zawodnicy: </span><br/>
 <% @team.players.each do |player|  %>
   <%= h "#{player.firstname}  #{player.surname}" %><br/>
-    <% end  %>
+<% end  %>
 
 <%= link_to 'Edit', edit_team_path(@team) %> |
 <%= link_to 'Back', teams_path %>
