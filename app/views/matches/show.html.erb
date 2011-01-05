@@ -1,0 +1,28 @@
+<p>
+  <b>Team 1:</b>
+  <%=h @match.team_1 %>
+</p>
+
+<p>
+  <b>Team 2:</b>
+  <%=h @match.team_2 %>
+</p>
+
+<p>
+  <b>Matchday:</b>
+  <%=h @match.matchday %>
+</p>
+
+<p>
+  <b>Score team 1:</b>
+  <%=h @match.score_team_1 %>
+</p>
+
+<p>
+  <b>Score team 2:</b>
+  <%=h @match.score_team_2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_match_path(@match) %> |
+<%= link_to 'Back', matches_path %>
