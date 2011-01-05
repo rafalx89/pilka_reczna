@@ -43811,3 +43811,1134 @@ Processing SeasonsController#new (for 127.0.0.1 at 2011-01-05 07:26:47) [GET]
 Rendering template within layouts/home
 Rendering seasons/new
 Completed in 25ms (View: 20, DB: 0) | 200 OK [http://localhost/seasons/new]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateLeagues (20101229230707)
+Migrating to CreateTeams (20101230152010)
+Migrating to CreatePlayers (20110103222315)
+Migrating to CreateContracts (20110103222331)
+Migrating to CreateSeasons (20110105055847)
+Migrating to CreateMatchdays (20110105062939)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "matchdays" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "matchday_no" integer, "season_id" integer, "play_time" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110105062939')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("contracts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("leagues")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("matchdays")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("players")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("seasons")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("teams")[0m
+
+
+Processing SeasonsController#index (for 127.0.0.1 at 2011-01-05 07:39:12) [GET]
+  [4;36;1mSeason Load (0.6ms)[0m   [0;1mSELECT * FROM "seasons" [0m
+Rendering template within layouts/home
+Rendering seasons/index
+Completed in 27ms (View: 21, DB: 1) | 200 OK [http://localhost/seasons]
+
+
+Processing MatchdaysController#index (for 127.0.0.1 at 2011-01-05 07:39:17) [GET]
+  [4;35;1mMatchday Load (0.5ms)[0m   [0mSELECT * FROM "matchdays" [0m
+Rendering template within layouts/home
+Rendering matchdays/index
+Completed in 21ms (View: 12, DB: 0) | 200 OK [http://localhost/matchdays]
+
+
+Processing MatchdaysController#index (for 127.0.0.1 at 2011-01-05 07:43:06) [GET]
+  [4;36;1mMatchday Load (0.5ms)[0m   [0;1mSELECT * FROM "matchdays" [0m
+Rendering template within layouts/home
+Rendering matchdays/index
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/matchdays]
+
+
+Processing MatchdaysController#new (for 127.0.0.1 at 2011-01-05 07:48:47) [GET]
+  [4;35;1mSeason Load (0.6ms)[0m   [0mSELECT * FROM "seasons" [0m
+Rendering template within layouts/home
+Rendering matchdays/new
+
+ActionView::TemplateError (undefined method `season_id' for #<Season:0xb67e80b8>) on line #12 of app/views/matchdays/new.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :season %><br />
+12:     <%= f.select :season_id, @seasons.map {|s| ["#{s.season_id}: #{s.start_date}-#{s.end_date}", s.id] } %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :play_time %><br />
+
+    app/views/matchdays/new.html.erb:12
+    app/views/matchdays/new.html.erb:12:in `map'
+    app/views/matchdays/new.html.erb:12
+    app/views/matchdays/new.html.erb:3
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (53.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MatchdaysController#new (for 127.0.0.1 at 2011-01-05 07:49:35) [GET]
+  [4;36;1mSeason Load (0.6ms)[0m   [0;1mSELECT * FROM "seasons" [0m
+Rendering template within layouts/home
+Rendering matchdays/new
+Completed in 27ms (View: 20, DB: 1) | 200 OK [http://localhost/matchdays/new]
+
+
+Processing MatchdaysController#new (for 127.0.0.1 at 2011-01-05 07:49:56) [GET]
+  [4;35;1mSeason Load (0.6ms)[0m   [0mSELECT * FROM "seasons" [0m
+Rendering template within layouts/home
+Rendering matchdays/new
+Completed in 29ms (View: 21, DB: 1) | 200 OK [http://localhost/matchdays/new]
+
+
+Processing MatchdaysController#new (for 127.0.0.1 at 2011-01-05 07:50:30) [GET]
+  [4;36;1mSeason Load (0.6ms)[0m   [0;1mSELECT * FROM "seasons" [0m
+Rendering template within layouts/home
+Rendering matchdays/new
+Completed in 28ms (View: 20, DB: 1) | 200 OK [http://localhost/matchdays/new]
+
+
+Processing MatchdaysController#new (for 127.0.0.1 at 2011-01-05 07:51:53) [GET]
+  [4;35;1mSeason Load (0.6ms)[0m   [0mSELECT * FROM "seasons" [0m
+Rendering template within layouts/home
+Rendering matchdays/new
+Completed in 24ms (View: 17, DB: 1) | 200 OK [http://localhost/matchdays/new]
+
+
+Processing MatchdaysController#create (for 127.0.0.1 at 2011-01-05 07:51:56) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Y+5N/SHgNlC3FCzqcWIF3mjnmRtpzG47KwN9V4MjAj4=", "matchday"=>{"play_time(1i)"=>"2011", "play_time(2i)"=>"1", "play_time(3i)"=>"5", "season_id"=>"", "matchday_no"=>""}}
+  [4;36;1mSeason Load (0.5ms)[0m   [0;1mSELECT * FROM "seasons" [0m
+Rendering template within layouts/home
+Rendering matchdays/new
+Completed in 29ms (View: 19, DB: 1) | 200 OK [http://localhost/matchdays]
+
+
+Processing MatchdaysController#create (for 127.0.0.1 at 2011-01-05 07:52:48) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"Y+5N/SHgNlC3FCzqcWIF3mjnmRtpzG47KwN9V4MjAj4=", "matchday"=>{"play_time(1i)"=>"2006", "play_time(2i)"=>"1", "play_time(3i)"=>"5", "season_id"=>"1", "matchday_no"=>"1"}}
+  [4;35;1mSeason Load (0.6ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Create (0.3ms)[0m   [0;1mINSERT INTO "matchdays" ("created_at", "updated_at", "play_time", "season_id", "matchday_no") VALUES('2011-01-05 06:52:49', '2011-01-05 06:52:49', '2006-01-05', 1, 1)[0m
+Redirected to http://localhost:3000/matchdays/1
+Completed in 154ms (DB: 1) | 302 Found [http://localhost/matchdays]
+
+
+Processing MatchdaysController#show (for 127.0.0.1 at 2011-01-05 07:52:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSeason Load (0.6ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/show
+  [4;35;1mSeason Load (0.2ms)[0m   [0mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+Completed in 21ms (View: 12, DB: 1) | 200 OK [http://localhost/matchdays/1]
+
+
+Processing MatchdaysController#show (for 127.0.0.1 at 2011-01-05 07:54:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSeason Load (0.6ms)[0m   [0;1mSELECT * FROM "seasons" [0m
+  [4;35;1mMatchday Load (0.2ms)[0m   [0mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/show
+
+ActionView::TemplateError (undefined method `saeson' for #<Matchday:0xb68bcf84>) on line #4 of app/views/matchdays/show.html.erb:
+1:  <div class="show">
+2:     <h3><span class="name">ID: </span><%=h @matchday.id %></h3><br/>
+3:     <span class="name">Data rozegrania: </span><%=h @matchday.play_time %><br/>
+4:     <span class="name">Sezon: </span><%=h @matchday.saeson %><br/>
+5:  </div>
+6: <%= link_to 'Edit', edit_matchday_path(@matchday) %> |
+7: <%= link_to 'Back', matchdays_path %>
+
+    app/views/matchdays/show.html.erb:4
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (107.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MatchdaysController#show (for 127.0.0.1 at 2011-01-05 07:54:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSeason Load (0.6ms)[0m   [0;1mSELECT * FROM "seasons" [0m
+  [4;35;1mMatchday Load (0.2ms)[0m   [0mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/show
+  [4;36;1mSeason Load (0.2ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+Completed in 21ms (View: 12, DB: 1) | 200 OK [http://localhost/matchdays/1]
+
+
+Processing SeasonsController#index (for 127.0.0.1 at 2011-01-05 07:55:07) [GET]
+  [4;35;1mSeason Load (0.7ms)[0m   [0mSELECT * FROM "seasons" [0m
+Rendering template within layouts/home
+Rendering seasons/index
+Completed in 20ms (View: 14, DB: 1) | 200 OK [http://localhost/seasons]
+
+
+Processing MatchdaysController#index (for 127.0.0.1 at 2011-01-05 07:55:10) [GET]
+  [4;36;1mSeason Load (0.6ms)[0m   [0;1mSELECT * FROM "seasons" [0m
+  [4;35;1mMatchday Load (0.2ms)[0m   [0mSELECT * FROM "matchdays" [0m
+Rendering template within layouts/home
+Rendering matchdays/index
+  [4;36;1mSeason Load (0.2ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+Completed in 78ms (View: 70, DB: 1) | 200 OK [http://localhost/matchdays]
+
+
+Processing SeasonsController#index (for 127.0.0.1 at 2011-01-05 07:55:13) [GET]
+  [4;35;1mSeason Load (0.6ms)[0m   [0mSELECT * FROM "seasons" [0m
+Rendering template within layouts/home
+Rendering seasons/index
+Completed in 20ms (View: 14, DB: 1) | 200 OK [http://localhost/seasons]
+
+
+Processing SeasonsController#new (for 127.0.0.1 at 2011-01-05 07:55:14) [GET]
+Rendering template within layouts/home
+Rendering seasons/new
+Completed in 23ms (View: 17, DB: 0) | 200 OK [http://localhost/seasons/new]
+
+
+Processing MatchdaysController#index (for 127.0.0.1 at 2011-01-05 07:55:17) [GET]
+  [4;36;1mSeason Load (0.6ms)[0m   [0;1mSELECT * FROM "seasons" [0m
+  [4;35;1mMatchday Load (0.7ms)[0m   [0mSELECT * FROM "matchdays" [0m
+Rendering template within layouts/home
+Rendering matchdays/index
+  [4;36;1mSeason Load (0.2ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+Completed in 25ms (View: 16, DB: 2) | 200 OK [http://localhost/matchdays]
+
+
+Processing MatchdaysController#index (for 127.0.0.1 at 2011-01-05 07:57:26) [GET]
+  [4;35;1mSeason Load (0.7ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" [0m
+Rendering template within layouts/home
+Rendering matchdays/index
+  [4;35;1mSeason Load (0.2ms)[0m   [0mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+Completed in 24ms (View: 15, DB: 1) | 200 OK [http://localhost/matchdays]
+
+
+Processing MatchdaysController#index (for 127.0.0.1 at 2011-01-05 07:59:08) [GET]
+  [4;36;1mSeason Load (0.6ms)[0m   [0;1mSELECT * FROM "seasons" [0m
+  [4;35;1mMatchday Load (0.2ms)[0m   [0mSELECT * FROM "matchdays" [0m
+Rendering template within layouts/home
+Rendering matchdays/index
+  [4;36;1mSeason Load (0.2ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+Completed in 21ms (View: 12, DB: 1) | 200 OK [http://localhost/matchdays]
+
+
+Processing MatchdaysController#index (for 127.0.0.1 at 2011-01-05 07:59:55) [GET]
+  [4;35;1mSeason Load (0.5ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" [0m
+Rendering template within layouts/home
+Rendering matchdays/index
+  [4;35;1mSeason Load (0.2ms)[0m   [0mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+
+ActionView::TemplateError (undefined method `season' for nil:NilClass) on line #9 of app/views/matchdays/index.html.erb:
+6:     <span class="name">Data rozegrania: </span><%=h matchday.play_time %><br/>
+7:     <span class="name">Sezon: </span>
+8:     <% if matchday.season != nil  %>
+9:       <%=h @matchday.season.id %>:   
+10:       <%=h @matchday.season.start_date %>  - 
+11:       <%=h @matchday.season.end_date  %>
+12:     <% else  %>
+
+    app/views/matchdays/index.html.erb:9
+    app/views/matchdays/index.html.erb:3:in `each'
+    app/views/matchdays/index.html.erb:3
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (101.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MatchdaysController#show (for 127.0.0.1 at 2011-01-05 08:00:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSeason Load (0.7ms)[0m   [0;1mSELECT * FROM "seasons" [0m
+  [4;35;1mMatchday Load (0.2ms)[0m   [0mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/show
+  [4;36;1mSeason Load (0.2ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+Completed in 23ms (View: 14, DB: 1) | 200 OK [http://localhost/matchdays/1]
+
+
+Processing MatchdaysController#index (for 127.0.0.1 at 2011-01-05 08:00:37) [GET]
+  [4;35;1mSeason Load (0.6ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" [0m
+Rendering template within layouts/home
+Rendering matchdays/index
+  [4;35;1mSeason Load (0.2ms)[0m   [0mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+Completed in 25ms (View: 16, DB: 1) | 200 OK [http://localhost/matchdays]
+
+
+Processing MatchdaysController#index (for 127.0.0.1 at 2011-01-05 08:00:58) [GET]
+  [4;36;1mSeason Load (0.6ms)[0m   [0;1mSELECT * FROM "seasons" [0m
+  [4;35;1mMatchday Load (0.2ms)[0m   [0mSELECT * FROM "matchdays" [0m
+Rendering template within layouts/home
+Rendering matchdays/index
+  [4;36;1mSeason Load (0.2ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+Completed in 26ms (View: 18, DB: 1) | 200 OK [http://localhost/matchdays]
+
+
+Processing MatchdaysController#show (for 127.0.0.1 at 2011-01-05 08:01:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSeason Load (0.6ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/show
+  [4;35;1mSeason Load (0.2ms)[0m   [0mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+Completed in 23ms (View: 14, DB: 1) | 200 OK [http://localhost/matchdays/1]
+
+
+Processing MatchdaysController#index (for 127.0.0.1 at 2011-01-05 08:01:04) [GET]
+  [4;36;1mSeason Load (0.6ms)[0m   [0;1mSELECT * FROM "seasons" [0m
+  [4;35;1mMatchday Load (0.2ms)[0m   [0mSELECT * FROM "matchdays" [0m
+Rendering template within layouts/home
+Rendering matchdays/index
+  [4;36;1mSeason Load (0.2ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+Completed in 21ms (View: 13, DB: 1) | 200 OK [http://localhost/matchdays]
+
+
+Processing MatchdaysController#new (for 127.0.0.1 at 2011-01-05 08:01:05) [GET]
+  [4;35;1mSeason Load (0.6ms)[0m   [0mSELECT * FROM "seasons" [0m
+Rendering template within layouts/home
+Rendering matchdays/new
+Completed in 89ms (View: 18, DB: 1) | 200 OK [http://localhost/matchdays/new]
+
+
+Processing MatchdaysController#index (for 127.0.0.1 at 2011-01-05 08:01:06) [GET]
+  [4;36;1mSeason Load (0.6ms)[0m   [0;1mSELECT * FROM "seasons" [0m
+  [4;35;1mMatchday Load (0.2ms)[0m   [0mSELECT * FROM "matchdays" [0m
+Rendering template within layouts/home
+Rendering matchdays/index
+  [4;36;1mSeason Load (0.2ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+Completed in 21ms (View: 13, DB: 1) | 200 OK [http://localhost/matchdays]
+
+
+Processing MatchdaysController#edit (for 127.0.0.1 at 2011-01-05 08:01:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSeason Load (0.6ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/edit
+  [4;35;1mSeason Load (0.2ms)[0m   [0mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+Completed in 29ms (View: 21, DB: 1) | 200 OK [http://localhost/matchdays/1/edit]
+
+
+Processing MatchdaysController#index (for 127.0.0.1 at 2011-01-05 08:01:11) [GET]
+  [4;36;1mSeason Load (0.6ms)[0m   [0;1mSELECT * FROM "seasons" [0m
+  [4;35;1mMatchday Load (0.2ms)[0m   [0mSELECT * FROM "matchdays" [0m
+Rendering template within layouts/home
+Rendering matchdays/index
+  [4;36;1mSeason Load (0.2ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+Completed in 23ms (View: 15, DB: 1) | 200 OK [http://localhost/matchdays]
+
+
+Processing MatchdaysController#edit (for 127.0.0.1 at 2011-01-05 08:04:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSeason Load (0.5ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/edit
+
+ActionView::TemplateError (undefined local variable or method `season_no' for #<ActionView::Base:0xb6741f88>) on line #12 of app/views/matchdays/edit.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :season %><br />
+12:     <%= f.select :season_id, option_from_colletion_for_select(@seasons, 'id', "#{season_no}: #{start_date} - #{end_date}") %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :play_time %><br />
+
+    app/views/matchdays/edit.html.erb:12
+    app/views/matchdays/edit.html.erb:3
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (52.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MatchdaysController#edit (for 127.0.0.1 at 2011-01-05 08:06:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSeason Load (0.5ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/edit
+
+ActionView::TemplateError (undefined method `option_from_colletion_for_select' for #<ActionView::Base:0xb68747d4>) on line #12 of app/views/matchdays/edit.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :season %><br />
+12:     <%= f.select :season_id, option_from_colletion_for_select(@seasons, 'id', 'season_no' + 'start_date' + 'end_date') %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :play_time %><br />
+
+    app/views/matchdays/edit.html.erb:12
+    app/views/matchdays/edit.html.erb:3
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (111.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MatchdaysController#edit (for 127.0.0.1 at 2011-01-05 08:06:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSeason Load (0.6ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/edit
+
+ActionView::TemplateError (undefined method `option_from_colletion_for_select' for #<ActionView::Base:0xb698bf78>) on line #12 of app/views/matchdays/edit.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :season %><br />
+12:     <%= f.select :season_id, option_from_colletion_for_select(@seasons, 'id', 'season_no' + 'start_date' + 'end_date') %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :play_time %><br />
+
+    app/views/matchdays/edit.html.erb:12
+    app/views/matchdays/edit.html.erb:3
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (49.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MatchdaysController#edit (for 127.0.0.1 at 2011-01-05 08:06:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSeason Load (0.6ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/edit
+
+ActionView::TemplateError (undefined method `options_from_colletion_for_select' for #<ActionView::Base:0xb676bea0>) on line #12 of app/views/matchdays/edit.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :season %><br />
+12:     <%= f.select :season_id, options_from_colletion_for_select(@seasons, 'id', 'season_no' + 'start_date' + 'end_date') %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :play_time %><br />
+
+    app/views/matchdays/edit.html.erb:12
+    app/views/matchdays/edit.html.erb:3
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (52.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MatchdaysController#edit (for 127.0.0.1 at 2011-01-05 08:06:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSeason Load (0.5ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/edit
+
+ActionView::TemplateError (undefined method `options_from_colletion_for_select' for #<ActionView::Base:0xb68378fc>) on line #12 of app/views/matchdays/edit.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :season %><br />
+12:     <%= f.select :season_id, options_from_colletion_for_select(@seasons, 'id', 'season_no' + 'start_date' + 'end_date') %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :play_time %><br />
+
+    app/views/matchdays/edit.html.erb:12
+    app/views/matchdays/edit.html.erb:3
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (133.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MatchdaysController#edit (for 127.0.0.1 at 2011-01-05 08:07:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSeason Load (0.6ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/edit
+
+ActionView::TemplateError (undefined method `season_nostart_dateend_date' for #<Season:0xb697f994>) on line #12 of app/views/matchdays/edit.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :season %><br />
+12:     <%= f.select :season_id,  options_from_collection_for_select(@seasons, 'id', 'season_no' + 'start_date' + 'end_date') %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :play_time %><br />
+
+    app/views/matchdays/edit.html.erb:12
+    app/views/matchdays/edit.html.erb:3
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (52.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MatchdaysController#edit (for 127.0.0.1 at 2011-01-05 08:07:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSeason Load (0.5ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/edit
+
+ActionView::TemplateError (undefined method `season_nostart_dateend_date' for #<Season:0xb674b0b0>) on line #12 of app/views/matchdays/edit.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :season %><br />
+12:     <%= f.select :season_id,  options_from_collection_for_select(@seasons, 'id', 'season_no' + 'start_date' + 'end_date') %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :play_time %><br />
+
+    app/views/matchdays/edit.html.erb:12
+    app/views/matchdays/edit.html.erb:3
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (55.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MatchdaysController#edit (for 127.0.0.1 at 2011-01-05 08:07:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSeason Load (0.5ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/edit
+
+ActionView::TemplateError (undefined method `season_nostart_dateend_date' for #<Season:0xb6812368>) on line #12 of app/views/matchdays/edit.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :season %><br />
+12:     <%= f.select :season_id,  options_from_collection_for_select(@seasons, 'id', 'season_no' + 'start_date' + 'end_date') %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :play_time %><br />
+
+    app/views/matchdays/edit.html.erb:12
+    app/views/matchdays/edit.html.erb:3
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (114.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MatchdaysController#edit (for 127.0.0.1 at 2011-01-05 08:07:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSeason Load (0.6ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/edit
+
+ActionView::TemplateError (undefined method `season_nostart_dateend_date' for #<Season:0xb6979b34>) on line #12 of app/views/matchdays/edit.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :season %><br />
+12:     <%= f.select :season_id,  options_from_collection_for_select(@seasons, 'id', 'season_no' + 'start_date' + 'end_date') %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :play_time %><br />
+
+    app/views/matchdays/edit.html.erb:12
+    app/views/matchdays/edit.html.erb:3
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (54.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MatchdaysController#edit (for 127.0.0.1 at 2011-01-05 08:07:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSeason Load (0.5ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.3ms)[0m   [0;1mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/edit
+
+ActionView::TemplateError (undefined method `season_no start_date end_date ' for #<Season:0xb674eb48>) on line #12 of app/views/matchdays/edit.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :season %><br />
+12:     <%= f.select :season_id,  options_from_collection_for_select(@seasons, 'id', 'season_no ' + 'start_date ' + 'end_date ') %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :play_time %><br />
+
+    app/views/matchdays/edit.html.erb:12
+    app/views/matchdays/edit.html.erb:3
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (54.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MatchdaysController#edit (for 127.0.0.1 at 2011-01-05 08:10:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSeason Load (0.5ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/edit
+
+ActionView::TemplateError (["season_no ", "start_date", "end_date"] is not a symbol) on line #12 of app/views/matchdays/edit.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :season %><br />
+12:     <%= f.select :season_id,  options_from_collection_for_select(@seasons, 'id', ['season_no ', 'start_date', 'end_date']) %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :play_time %><br />
+
+    app/views/matchdays/edit.html.erb:12
+    app/views/matchdays/edit.html.erb:3
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (115.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MatchdaysController#edit (for 127.0.0.1 at 2011-01-05 08:10:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSeason Load (0.6ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/edit
+
+ActionView::TemplateError (["season_no", "start_date", "end_date"] is not a symbol) on line #12 of app/views/matchdays/edit.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :season %><br />
+12:     <%= f.select :season_id,  options_from_collection_for_select(@seasons, 'id', ['season_no', 'start_date', 'end_date']) %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :play_time %><br />
+
+    app/views/matchdays/edit.html.erb:12
+    app/views/matchdays/edit.html.erb:3
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (51.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MatchdaysController#edit (for 127.0.0.1 at 2011-01-05 08:10:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSeason Load (0.5ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/edit
+
+ActionView::TemplateError (["season_no", "start_date", "end_date"] is not a symbol) on line #12 of app/views/matchdays/edit.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :season %><br />
+12:     <%= f.select :season_id,  options_from_collection_for_select(@seasons, 'id', ['season_no', 'start_date', 'end_date']) %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :play_time %><br />
+
+    app/views/matchdays/edit.html.erb:12
+    app/views/matchdays/edit.html.erb:3
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (54.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MatchdaysController#edit (for 127.0.0.1 at 2011-01-05 08:11:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSeason Load (0.5ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/edit
+ERROR: compiling _run_erb_app47views47matchdays47edit46html46erb RAISED compile error
+/home/rafal/public_html/rubyonrails/pilka_reczna/app/views/matchdays/edit.html.erb:12: odd number list for Hash
+...no', 'start_date', 'end_date'}) ).to_s); @output_buffer.conc...
+                              ^
+Function body:           def _run_erb_app47views47matchdays47edit46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Edycja kolejki</h1>\n\n"
+
+;  form_for(@matchday) do |f| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :matchday_no ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.text_field :matchday_no ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :season ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.select :season_id,  options_from_collection_for_select(@seasons, 'id', {'season_no', 'start_date', 'end_date'}) ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :play_time ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.date_select :play_time ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.submit 'Zatwierdź' ).to_s); @output_buffer.concat "\n  </p>\n"
+
+;  end ; @output_buffer.concat "\n\n"
+
+; @output_buffer.concat(( link_to 'Pokaż', @matchday ).to_s); @output_buffer.concat " |\n"
+; @output_buffer.concat(( link_to 'Cofnij', matchdays_path ).to_s); @output_buffer.concat "\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/rafal/public_html/rubyonrails/pilka_reczna/app/views/matchdays/edit.html.erb:28:in `compile!'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/commands/server.rb:111
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/rafal/public_html/rubyonrails/pilka_reczna/app/views/matchdays/edit.html.erb:12: odd number list for Hash
+...no', 'start_date', 'end_date'}) ).to_s); @output_buffer.conc...
+                              ^) on line #12 of app/views/matchdays/edit.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :season %><br />
+12:     <%= f.select :season_id,  options_from_collection_for_select(@seasons, 'id', {'season_no', 'start_date', 'end_date'}) %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :play_time %><br />
+
+    app/views/matchdays/edit.html.erb:28:in `compile!'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (108.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MatchdaysController#edit (for 127.0.0.1 at 2011-01-05 08:11:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSeason Load (0.6ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/edit
+ERROR: compiling _run_erb_app47views47matchdays47edit46html46erb RAISED compile error
+/home/rafal/public_html/rubyonrails/pilka_reczna/app/views/matchdays/edit.html.erb:12: odd number list for Hash
+...no', 'start_date', 'end_date'}) ).to_s); @output_buffer.conc...
+                              ^
+Function body:           def _run_erb_app47views47matchdays47edit46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Edycja kolejki</h1>\n\n"
+
+;  form_for(@matchday) do |f| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :matchday_no ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.text_field :matchday_no ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :season ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.select :season_id,  options_from_collection_for_select(@seasons, 'id', {'season_no', 'start_date', 'end_date'}) ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :play_time ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.date_select :play_time ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.submit 'Zatwierdź' ).to_s); @output_buffer.concat "\n  </p>\n"
+
+;  end ; @output_buffer.concat "\n\n"
+
+; @output_buffer.concat(( link_to 'Pokaż', @matchday ).to_s); @output_buffer.concat " |\n"
+; @output_buffer.concat(( link_to 'Cofnij', matchdays_path ).to_s); @output_buffer.concat "\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/rafal/public_html/rubyonrails/pilka_reczna/app/views/matchdays/edit.html.erb:28:in `compile!'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+/home/rafal/.rvm/gems/ruby-1.8.7-p302/gems/rails-2.3.5/lib/commands/server.rb:111
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/rafal/public_html/rubyonrails/pilka_reczna/app/views/matchdays/edit.html.erb:12: odd number list for Hash
+...no', 'start_date', 'end_date'}) ).to_s); @output_buffer.conc...
+                              ^) on line #12 of app/views/matchdays/edit.html.erb:
+9:   </p>
+10:   <p>
+11:     <%= f.label :season %><br />
+12:     <%= f.select :season_id,  options_from_collection_for_select(@seasons, 'id', {'season_no', 'start_date', 'end_date'}) %>
+13:   </p>
+14:   <p>
+15:     <%= f.label :play_time %><br />
+
+    app/views/matchdays/edit.html.erb:28:in `compile!'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /home/rafal/.rvm/rubies/ruby-1.8.7-p302/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (53.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MatchdaysController#edit (for 127.0.0.1 at 2011-01-05 08:16:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mSeason Load (0.5ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" WHERE ("matchdays"."id" = 1) [0m
+Rendering template within layouts/home
+Rendering matchdays/edit
+Completed in 29ms (View: 21, DB: 1) | 200 OK [http://localhost/matchdays/1/edit]
+
+
+Processing MatchdaysController#index (for 127.0.0.1 at 2011-01-05 08:16:48) [GET]
+  [4;35;1mSeason Load (0.6ms)[0m   [0mSELECT * FROM "seasons" [0m
+  [4;36;1mMatchday Load (0.2ms)[0m   [0;1mSELECT * FROM "matchdays" [0m
+Rendering template within layouts/home
+Rendering matchdays/index
+  [4;35;1mSeason Load (0.2ms)[0m   [0mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://localhost/matchdays]
+
+
+Processing MatchdaysController#index (for 127.0.0.1 at 2011-01-05 08:17:02) [GET]
+  [4;36;1mSeason Load (0.6ms)[0m   [0;1mSELECT * FROM "seasons" [0m
+  [4;35;1mMatchday Load (0.2ms)[0m   [0mSELECT * FROM "matchdays" [0m
+Rendering template within layouts/home
+Rendering matchdays/index
+  [4;36;1mSeason Load (0.2ms)[0m   [0;1mSELECT * FROM "seasons" WHERE ("seasons"."id" = 1) [0m
+Completed in 27ms (View: 18, DB: 1) | 200 OK [http://localhost/matchdays]
+
+
+Processing SeasonsController#index (for 127.0.0.1 at 2011-01-05 08:17:10) [GET]
+  [4;35;1mSeason Load (0.5ms)[0m   [0mSELECT * FROM "seasons" [0m
+Rendering template within layouts/home
+Rendering seasons/index
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://localhost/seasons]
+
+
+Processing SeasonsController#index (for 127.0.0.1 at 2011-01-05 08:18:51) [GET]
+  [4;36;1mSeason Load (0.6ms)[0m   [0;1mSELECT * FROM "seasons" [0m
+Rendering template within layouts/home
+Rendering seasons/index
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/seasons]
+
+
+Processing SeasonsController#show (for 127.0.0.1 at 2011-01-05 08:18:55) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSeason Load (0.2ms)[0m   [0mSELECT * FROM "seasons" WHERE ("seasons"."id" = 2) [0m
+Rendering template within layouts/home
+Rendering seasons/show
+Completed in 18ms (View: 12, DB: 0) | 200 OK [http://localhost/seasons/2]

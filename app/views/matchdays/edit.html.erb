@@ -1,4 +1,4 @@
-<h1>Editing matchday</h1>
+<h1>Edycja kolejki</h1>
 
 <% form_for(@matchday) do |f| %>
   <%= f.error_messages %>
@@ -9,16 +9,16 @@
   </p>
   <p>
     <%= f.label :season %><br />
-    <%= f.text_field :season %>
+    <%= f.select :season_id,  @seasons.map { |s| ["#{s.season_no}: #{s.start_date} - #{s.end_date}", s.id]} %>
   </p>
   <p>
     <%= f.label :play_time %><br />
     <%= f.date_select :play_time %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Zatwierdź' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @matchday %> |
-<%= link_to 'Back', matchdays_path %>
+<%= link_to 'Pokaż', @matchday %> |
+<%= link_to 'Cofnij', matchdays_path %>

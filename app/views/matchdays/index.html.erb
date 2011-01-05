@@ -1,24 +1,25 @@
-<h1>Listing matchdays</h1>
-
-<table>
-  <tr>
-    <th>Matchday no</th>
-    <th>Season</th>
-    <th>Play time</th>
-  </tr>
+<h1>Kolejki</h1>
 
 <% @matchdays.each do |matchday| %>
-  <tr>
-    <td><%=h matchday.matchday_no %></td>
-    <td><%=h matchday.season %></td>
-    <td><%=h matchday.play_time %></td>
-    <td><%= link_to 'Show', matchday %></td>
-    <td><%= link_to 'Edit', edit_matchday_path(matchday) %></td>
-    <td><%= link_to 'Destroy', matchday, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <div class="show">
+    <h3><span class="name">ID: </span><%=h matchday.id %></h3><br/>
+    <span class="name">Data rozegrania: </span><%=h matchday.play_time %><br/>
+    <span class="name">Sezon: </span>
+    <% if matchday.season != nil  %>
+      <%=h matchday.season.id %>:   
+      <%=h matchday.season.start_date %>  - 
+      <%=h matchday.season.end_date  %><br/>
+    <% else  %>
+      Brak <br/>
+    <% end  %>
+        
 
+    <%= link_to 'Pokaż', matchday %>
+    <%= link_to 'Edytuj', edit_matchday_path(matchday) %>
+    <%= link_to 'Usuń', matchday, :confirm => 'Jesteś pewien?', :method => :delete %>
+    <hr />
+    </div>
+<% end %>
 <br />
 
-<%= link_to 'New matchday', new_matchday_path %>
+<%= link_to 'Nowa kolejka', new_matchday_path %>

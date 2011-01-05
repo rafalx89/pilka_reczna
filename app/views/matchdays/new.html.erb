@@ -9,7 +9,7 @@
   </p>
   <p>
     <%= f.label :season %><br />
-    <%= f.text_field :season %>
+    <%= f.select :season_id, @seasons.map {|s| ["#{s.season_no}: #{s.start_date} - #{s.end_date}", s.id] }, :prompt => "Wybierz sezon" %>
   </p>
   <p>
     <%= f.label :play_time %><br />

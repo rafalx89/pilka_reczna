@@ -1,18 +1,15 @@
-<p>
-  <b>Matchday no:</b>
-  <%=h @matchday.matchday_no %>
-</p>
-
-<p>
-  <b>Season:</b>
-  <%=h @matchday.season %>
-</p>
-
-<p>
-  <b>Play time:</b>
-  <%=h @matchday.play_time %>
-</p>
-
-
+ <div class="show">
+    <h3><span class="name">ID: </span><%=h @matchday.id %></h3><br/>
+    <span class="name">Data rozegrania: </span><%=h @matchday.play_time %><br/>
+    <span class="name">Sezon: </span>
+    <% if @matchday.season != nil  -%>
+      <%=h @matchday.season.id %>:   
+      <%=h @matchday.season.start_date %>  - 
+      <%=h @matchday.season.end_date  %><br/>
+      <br/>
+    <% else  -%>
+      Brak <br/>
+    <% end  -%>
+ </div>
 <%= link_to 'Edit', edit_matchday_path(@matchday) %> |
 <%= link_to 'Back', matchdays_path %>
