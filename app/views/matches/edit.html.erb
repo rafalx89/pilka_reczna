@@ -1,19 +1,19 @@
-<h1>Editing match</h1>
+<h1>Edytuj mecz</h1>
 
 <% form_for(@match) do |f| %>
   <%= f.error_messages %>
 
   <p>
     <%= f.label :team_1 %><br />
-    <%= f.text_field :team_1 %>
+    <%= f.select :team_1, options_from_collection_for_select(@teams, 'id', 'name') %>
   </p>
   <p>
     <%= f.label :team_2 %><br />
-    <%= f.text_field :team_2 %>
+    <%= f.select :team_2, options_from_collection_for_select(@teams, 'id', 'name') %>
   </p>
   <p>
-    <%= f.label :matchday %><br />
-    <%= f.text_field :matchday %>
+    <%= f.label :matchday %><br />  
+    <%= f.select :matchday_id, @matchdays.map {|md| ["#{md.matchday_no}, #{md.play_time}", md.id]} %>
   </p>
   <p>
     <%= f.label :score_team_1 %><br />
@@ -24,9 +24,9 @@
     <%= f.text_field :score_team_2 %>
   </p>
   <p>
-    <%= f.submit 'Update' %>
+    <%= f.submit 'Zapisz' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @match %> |
-<%= link_to 'Back', matches_path %>
+<%= link_to 'Pokaż', @match %> |
+<%= link_to 'Cofnij', matches_path %>

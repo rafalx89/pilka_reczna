@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :league_tables
+
   map.resources :matches
 
   map.resources :matchdays

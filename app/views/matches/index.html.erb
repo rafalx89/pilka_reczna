@@ -1,28 +1,19 @@
-<h1>Listing matches</h1>
-
-<table>
-  <tr>
-    <th>Team 1</th>
-    <th>Team 2</th>
-    <th>Matchday</th>
-    <th>Score team 1</th>
-    <th>Score team 2</th>
-  </tr>
+<h1>Mecze</h1>
 
 <% @matches.each do |match| %>
-  <tr>
-    <td><%=h match.team_1 %></td>
-    <td><%=h match.team_2 %></td>
-    <td><%=h match.matchday %></td>
-    <td><%=h match.score_team_1 %></td>
-    <td><%=h match.score_team_2 %></td>
-    <td><%= link_to 'Show', match %></td>
-    <td><%= link_to 'Edit', edit_match_path(match) %></td>
-    <td><%= link_to 'Destroy', match, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <div class="show">
+    <h3><span class="name">Zespół 1: </span><%= !match.team1.nil? ? (link_to( h(match.team1.name), match.team1)) : "Brak"  %></h3><br/> 
+    <h3><span class="name">Zespół 2: </span><%= !match.team2.nil? ? (link_to( h(match.team2.name), match.team2)) : "Brak" %></h3><br/>
+    <span class="name">Kolejka: </span><%= !match.matchday.nil? ? (link_to( h("#{match.matchday.matchday_no} #{match.matchday.play_time}"), match.matchday)) : "Brak" %><br/>
+    <span class="name">Bramki zespołu 1: </span><%=h match.score_team_1 %><br/>
+    <span class="name">Bramki zespołu 2: </span> <%=h match.score_team_2%><br/>
+    <%= link_to 'Pokaż',  match %>
+    <%= link_to 'Edytuj', edit_match_path(match) %>
+    <%= link_to 'Usun' ,  match, :confirm => 'Jesteś pewien?', :method => :delete %>
+    <hr />
+    </div>
 <% end %>
-</table>
-
 <br />
-
-<%= link_to 'New match', new_match_path %>
+<div class="show">
+  <%= link_to 'Nowy mecz', new_match_path %>
+</div>

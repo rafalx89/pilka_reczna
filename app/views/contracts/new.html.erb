@@ -3,7 +3,7 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :team_id %><br />
-    <%= f.select :team_id, @teams.map { |t| [t.name, t.id]}, :prompt => "Wybierz zespół" %>
+    <%= f.select :team_id, @teams.map { |t| [t.name, t.id]} %>
   </p>
   <p>
     <%= f.label :start_date %><br />

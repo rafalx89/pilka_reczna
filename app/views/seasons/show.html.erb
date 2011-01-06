@@ -3,6 +3,36 @@
 <span class="name">Data rozpoczecia: </span><%=h @season.start_date %><br/> 
 <span class="name">Data zakonczenia: </span><%=h @season.end_date %><br/><br/>
 
+<span class="name">Kolejki: </span><br/>
+
+<table class= "match">
+  <tr>
+    <th>Nr</th>
+    <th>Gospodarz</th>
+    <th>Gość</th>
+    <th>Wynik</th>
+  </tr>
+
+  <% i=0  %>
+  <% @season.matchdays.each do |matchday| -%>
+    <tr>
+      <td id="matchday" colspan = "4">Kolejka: <%= h( "#{matchday.matchday_no}, #{matchday.play_time}" ) %></td>
+    </tr>
+    
+    <% matchday.matches.each do |match|  -%>
+      <tr>
+        <td><%= i+=1 %></td>
+        <td><%=h match.team1.name %></td>
+        <td><%=h match.team2.name %></td>
+        <td><%=h("#{match.score_team_1}-#{match.score_team_2}")  %></td>
+      </tr>
+    <% end  -%>
+
+  <% end  -%>
+
+  
+</table>
+
 
 <%= link_to 'Edit', edit_season_path(@season) %> |
 <%= link_to 'Back', seasons_path %>

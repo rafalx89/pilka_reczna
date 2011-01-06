@@ -22,9 +22,9 @@
         <%= link_to image_tag("buttons/contract.jpg"), { :controller => "contracts"}, :class => "button"  %><br/><br/>
         <%= link_to image_tag("buttons/season.jpg"), { :controller => "seasons"}, :class => "button"  %><br/><br/>
         <%= link_to image_tag("buttons/matchday.jpg"), { :controller => "matchdays"}, :class => "button"  %><br/><br/>
-        <a href=".../matches" class="button"><%= image_tag('buttons/match.jpg') %></a><br/><br/>
+        <%= link_to image_tag("buttons/match.jpg"), { :controller => "matches"}, :class => "button" %><br/><br/>
         <a href=".../shooters" class="button"><%= image_tag('buttons/shooter.jpg') %></a><br/><br/>
-        <a href=".../league_tables" class="button"><%= image_tag('buttons/league_table.jpg') %></a><br/><br/>
+        <%= link_to image_tag("buttons/league_table.jpg"), { :controller => "league_tables"}, :class => "button" %><br/><br/>
         <a href=".../search" class="button"><%= image_tag('buttons/search.jpg') %></a><br/><br/>
                 
       </div>

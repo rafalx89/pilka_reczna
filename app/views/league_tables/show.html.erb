@@ -1,0 +1,52 @@
+<p>
+  <b>Position:</b>
+  <%=h @league_table.position %>
+</p>
+
+<p>
+  <b>Team:</b>
+  <%=h @league_table.team %>
+</p>
+<p>
+  <b>Season:</b>
+  <%=h @league_table.season %>
+</p>
+
+<p>
+  <b>Matches quantity:</b>
+  <%=h @league_table.matches_quantity %>
+</p>
+
+<p>
+  <b>Win matches:</b>
+  <%=h @league_table.win_matches %>
+</p>
+
+<p>
+  <b>Lost matches:</b>
+  <%=h @league_table.lost_matches %>
+</p>
+
+<p>
+  <b>Tied matches:</b>
+  <%=h @league_table.tied_matches %>
+</p>
+
+<p>
+  <b>Lost goals:</b>
+  <%=h @league_table.lost_goals %>
+</p>
+
+<p>
+  <b>Scored goals:</b>
+  <%=h @league_table.scored_goals %>
+</p>
+
+<p>
+  <b>Points:</b>
+  <%=h @league_table.points %>
+</p>
+
+
+<%= link_to 'Edit', edit_league_table_path(@league_table) %> |
+<%= link_to 'Back', league_tables_path %>

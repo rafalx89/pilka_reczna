@@ -1,24 +1,16 @@
 class MatchesController < ApplicationController
+
+  before_filter :find_teams
+  before_filter :find_matchdays
   # GET /matches
-  # GET /matches.xml
   def index
     @matches = Match.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @matches }
-    end
   end
 
   # GET /matches/1
   # GET /matches/1.xml
   def show
     @match = Match.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @match }
-    end
   end
 
   # GET /matches/new
@@ -26,10 +18,6 @@ class MatchesController < ApplicationController
   def new
     @match = Match.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @match }
-    end
   end
 
   # GET /matches/1/edit
@@ -42,15 +30,11 @@ class MatchesController < ApplicationController
   def create
     @match = Match.new(params[:match])
 
-    respond_to do |format|
       if @match.save
         flash[:notice] = 'Match was successfully created.'
-        format.html { redirect_to(@match) }
-        format.xml  { render :xml => @match, :status => :created, :location => @match }
+        redirect_to(@match)
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @match.errors, :status => :unprocessable_entity }
-      end
+        render :action => "new"
     end
   end
 
@@ -59,27 +43,30 @@ class MatchesController < ApplicationController
   def update
     @match = Match.find(params[:id])
 
-    respond_to do |format|
       if @match.update_attributes(params[:match])
         flash[:notice] = 'Match was successfully updated.'
-        format.html { redirect_to(@match) }
-        format.xml  { head :ok }
+        redirect_to(@match)
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @match.errors, :status => :unprocessable_entity }
-      end
+        render :action => "edit"
     end
   end
 
   # DELETE /matches/1
-  # DELETE /matches/1.xml
   def destroy
     @match = Match.find(params[:id])
     @match.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(matches_url) }
-      format.xml  { head :ok }
-    end
+      redirect_to(matches_url) 
   end
+     
+  private
+
+  def find_teams
+    @teams = Team.all
+  end
+
+  def find_matchdays
+    @matchdays = Matchday.all
+  end
+
 end

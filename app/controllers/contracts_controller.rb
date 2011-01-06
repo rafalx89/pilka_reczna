@@ -22,7 +22,11 @@ class ContractsController < ApplicationController
   # POST /contracts
   def create
     @contract = @player.contracts.new(params[:contract])
-    @player.team_id  = @contract.team_id
+    if @contract.end_date > Date.today
+      @player.team_id  = @contract.team_id
+    else
+      @player.team_id = nil
+    end
 
       if @contract.save
         @player.save

@@ -1,0 +1,38 @@
+<h1>Listing league_tables</h1>
+
+<table>
+  <tr>
+    <th>Position</th>
+    <th>Season</th>
+    <th>Team</th>
+    <th>Matches quantity</th>
+    <th>Win matches</th>
+    <th>Lost matches</th>
+    <th>Tied matches</th>
+    <th>Lost goals</th>
+    <th>Scored goals</th>
+    <th>Points</th>
+  </tr>
+
+<% @league_tables.each do |league_table| %>
+  <tr>
+    <td><%=h league_table.position %></td>
+    <td><%=h league_table.season %></td>
+    <td><%=h league_table.team %></td>
+    <td><%=h league_table.matches_quantity %></td>
+    <td><%=h league_table.win_matches %></td>
+    <td><%=h league_table.lost_matches %></td>
+    <td><%=h league_table.tied_matches %></td>
+    <td><%=h league_table.lost_goals %></td>
+    <td><%=h league_table.scored_goals %></td>
+    <td><%=h league_table.points %></td>
+    <td><%= link_to 'Show', league_table %></td>
+    <td><%= link_to 'Edit', edit_league_table_path(league_table) %></td>
+    <td><%= link_to 'Destroy', league_table, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New league_table', new_league_table_path %>

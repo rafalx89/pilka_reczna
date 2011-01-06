@@ -2,14 +2,32 @@
     <h3><span class="name">ID: </span><%=h @matchday.id %></h3><br/>
     <span class="name">Data rozegrania: </span><%=h @matchday.play_time %><br/>
     <span class="name">Sezon: </span>
+
     <% if @matchday.season != nil  -%>
-      <%=h @matchday.season.id %>:   
-      <%=h @matchday.season.start_date %>  - 
-      <%=h @matchday.season.end_date  %><br/>
+      <%= link_to "#{@matchday.season.id} #{@matchday.season.start_date}-#{@matchday.season.end_date}", @matchday.season %>
+      <br/>
       <br/>
     <% else  -%>
       Brak <br/>
     <% end  -%>
+
+    <span class="name">Mecze:</span><br/>
+
+    <table class = "match">
+      <tr><th>NR</th> <th>Zespół 1</th> <th>Zespół 2</th><th>Wynik</th></tr>
+      
+      <% i=0  %>
+      <% @matchday.matches.each do |match|  -%>
+        <tr>
+          <td><%= i=i+1 %></td>
+          <td><%= h match.team1.name %></td>
+          <td><%= h match.team2.name %></td>
+          <td><%= h("#{match.score_team_1}-#{match.score_team_2}")  %></td>
+        </tr>
+      <% end  -%>
+
+    </table>
+
  </div>
 <%= link_to 'Edit', edit_matchday_path(@matchday) %> |
 <%= link_to 'Back', matchdays_path %>

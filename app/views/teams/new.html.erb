@@ -17,7 +17,7 @@
   </p>
   <p>
     <%= f.label :league %>
-    <%= f.select :league_id, @leagues.map {|p| ["#{p.name}, #{p.country}", p.id]}, :prompt => "Wybierz ligę" %>
+    <%= f.select :league_id, @leagues.map {|p| ["#{p.name}, #{p.country}", p.id]} %>
   </p>
   
 

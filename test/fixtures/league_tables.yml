@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  position: 1
+  team: 
+  matches_quantity: 1
+  win_matches: 1
+  lost_matches: 1
+  tied_matches: 1
+  lost_goals: 1
+  scored_goals: 1
+  points: 1
+
+two:
+  position: 1
+  team: 
+  matches_quantity: 1
+  win_matches: 1
+  lost_matches: 1
+  tied_matches: 1
+  lost_goals: 1
+  scored_goals: 1
+  points: 1

@@ -87,3 +87,26 @@ span.name
   background-color: gray;
   font: bold smaller sans-serif;
 }
+
+table.match
+{
+  margin: 0 auto;
+}
+
+table.match th
+{
+  border: 1px solid #545454;
+  background-color: #87CEFF;
+  text-align: center;
+}
+
+table.match td
+{
+  border: 1px solid #545454;
+  background-color: #ADD8D7;
+  text-align:center;
+}
+table.match td#matchday
+{
+  background-color: #87CEC8;
+}
